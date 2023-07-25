@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡我們 Contact Us</title>
+</head>
+<style>
+    .articlecontent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* 設定間距 */
+  padding: 20px; /* 可以根據需要調整整體內距 */
+}
+        
+
+        .headerwheatbar {
+            background-color: wheat;
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+
+
+        }
+        .firstarticle .bg-img{
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 1s ease;
+        }
+
+        .firstarticle:hover .bg-img{
+            display: block;
+            opacity: 1;
+        }
+
+        .headerwheatbar .logo {
+            margin-right: auto;
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+
+
+        .headerbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            list-style: none;
+            background-color: black;
+            margin: 0;
+            bottom: 0;
+
+        }
+
+        .headerbar li {
+            flex: 1;
+            text-align: center;
+        }
+
+        .headerbar a {
+            color: #b78d65;
+            text-decoration: none;
+            font-size: 25px;
+            display: block;
+            padding: 20px 10px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 500;
+
+        }
+
+        .frontpageblackblock {
+            height: 500px;
+            width: 100%;
+            position: relative;
+            background-color: black;
+        }
+
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+            height: 500px;
+            /* Set the height of the slide */
+        }
+
+        .slide {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 500px;
+            /* Set the height of the slide */
+        }
+
+        img {
+            width: 100%;
+            height: 500px;
+            /* Set the height of the image */
+            object-fit: cover;
+            /* Maintain aspect ratio and cover entire container */
+        }
+
+        .phone {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        .phone a{
+            text-decoration: none;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 500;
+            color: #b78d65;
+            align-items: center;
+            padding: 10px;
+            display: flex;
+        }
+
+        .phone :hover{
+            color: white;
+            transition: 0.5s;
+            background-color: #b78d65;
+        }
+
+        .phone img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .socialmediaiconk {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .socialmediaiconk img {
+            width: 50px;
+            height: 50px;
+        }
+
+
+
+        .categoryletter {
+            font-size: 100px;
+            color: #b78d65;
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            text-decoration: underline;
+
+
+
+        }
+
+        .frontpage .image {
+            width: 100px;
+            height: 100px;
+        }
+
+        .headerbar a:hover {
+            color: white;
+            transition: 0.5s;
+            background-color: #b78d65;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        footer h3{
+            font-size: 20px;
+            font-family: 'Open Sans', sans-serif;
+            margin: auto;
+        }
+        footer h2{
+            color: gray;
+            margin:10px;
+            padding: 10px;
+            font-size: 20px;
+            font-family: 'Open Sans', sans-serif;
+
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 100px;
+            letter-spacing: 1px;
+            padding: 15px;
+            height: 350px;
+        }
+
+        .footer-item {
+            padding: 10px;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        .smalltitle{
+            text-decoration: none;
+        }
+
+        .smalltitle :hover{
+            color:#b78d65;
+        }
+
+
+        .footer-grid,
+        .copyright {
+            color: white;
+        }
+        .article {
+            position: relative;
+            width: 100%
+        }
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.contactus{
+    
+    font-family: 'Open Sans', sans-serif;
+    color: #b78d65;
+    border:10px solid #b78d65;
+    background-image: url("/img/2.jpg");
+      /* 设置图片的大小和位置 */
+      background-size: cover; /* 调整图片尺寸以覆盖整个元素 */
+}
+
+.container{
+    border-radius: 20px;
+}
+.container :hover{
+    background-color: wh;
+}
+.contactus :hover{
+    background-color: white;
+}
+/* Initially hide the news content */
+
+</style>
+<body>
+
+    <div class="headerwheatbar">
+        <a href="#"><img src="/img/logo2.png" alt=""></a>
+
+        <div class="phone">
+            <a href="#"><img src="/img/phone.png" alt="">(03) 4258183</a>
+            <a href="#"><img src="/img/email.png" alt="">tibame.gmail.com</a>
+            <a href="#"><img src="/img/address.png" alt="">320桃園市中壢區復興路46號9樓</a>
+        </div>
+
+
+
+        <div class="socialmediaiconk">
+            <a href="#"><img src="/img/facebook.png" alt=""></a>
+            <a href="#"><img src="/img/twitter.png" alt=""></a>
+            <a href="#"><img src="/img/ig.png" alt=""></a>
+            <a href="#"><img src="/img/line.png" alt=""></a>
+            <a href="#"><img src="/img/youtube.png" alt=""></a>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <ul class="headerbar">
+        <li><a href="aboutus.html">關於我們 <br><br> ABOUT US</a></li>
+        <li><a href="news.html">最新消息 <br><br>NEWS</a></li>
+        <li><a href="promoption.html">限時特惠 <br><br>PROMTION</a></li>
+        <li><a href="category.html">海鮮品項 <br><br>CATEGORY</a></li>
+        <li><a href="contactus.html">聯絡資訊 <br><br>CONTACT</a></li>
+        <li><a href="member.html">會員中心 <br><br>MEMBERS</a></li>
+        <li><a href="shoppingcart.html">購物車 <br><br>SHOPPING CART</a></li>
+    </ul>
+</nav>
+
+<div class="frontpageblackblock">
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="/img/1.jpg" alt="">
+        </div>
+        <div class="slide fade">
+            <img src="/img/2.jpg" alt="">
+        </div>
+        <div class="slide fade">
+            <img src="/img/12.png" alt="">
+        </div>
+    </div>
+
+    <div class="categoryletter">
+        CONTACT US
+    </div>
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("slide");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+</script>
+  <!-- Contact Start -->
+<div class="contactus">
+    <div class="container">
+        <iframe class="map" style="width: 100%;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.249035944519!2d121.22244777650324!3d24.957640341359983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468223631e2f209%3A0x581275cd0db5d98f!2zMzIw5qGD5Zut5biC5Lit5Z2c5biC5b6p6IiI6LevNDbomZ855qiT!5e0!3m2!1szh-TW!2stw!4v1690140396909!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="contact-title">
+            <h4 class="section-title">聯絡我們 Contact Us</h4>
+            <h1 class="section-content">聯絡資訊 Contact Information</h1>
+        </div>
+        <div class="contactwrap">
+            <div class="contactdetail">
+                    
+                        <div class="contact-section">
+                            <p class="contact-item">地址 Address</p>
+                            <h3 class="mb-0">320桃園市中壢區復興路46號9樓</h3>
+                        </div>
+                    
+                    
+                        <div class="contact-section">
+                            <p class="contact-item">電話 phone</p>
+                            <h3 class="mb-0">(03) 425 8183</h3>
+                        </div>
+                
+                
+                        <div class="contact-section">
+                            <p class="contact-item">信箱 Email</p>
+                            <h3 class="mb-0">tibame@gmail.com</h3>
+                        </div>
+                    
+            </div>
+            <div class="email">
+                <form>
+                    <div class="formcontainer">
+                        <div class="littletextbar">
+                            <div class="textarea">
+                                <input type="text" class="yourname" id="name" placeholder="你的名字"><br>
+                                <label for="name">Name</label>
+                            </div>
+                        </div>
+                        <div class="littletextbar">
+                            <div class="textarea">
+                                <input type="email" class="youremail" id="email" placeholder="你的信箱"><br>
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="longtextbar">
+                            <div class="textarea">
+                                <input type="text" class="subject" id="subject" placeholder="郵件標題"><br>
+                                <label for="subject">Subject</label>
+                            </div>
+                        </div>
+                        <div class="longtextbar">
+                            <div class="textarea">
+                                <textarea class="form-control" placeholder="郵件內容" id="message" style="height: 100px"></textarea><br>
+                                <label for="message"></label>
+                            </div>
+                        </div>
+                        <div class="longtextbar" >
+                            <button class="submit" style="color: black; background-color: #b78d65;" type="submit">完成送出</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+    <footer>
+    <div class="footer-grid">
+        <div class="footer-item">
+            <h3>新聞 NEWS</h3>
+            <br>
+            <a class="smalltitle" href="#">
+            <h2>熱門新聞 Hot News</h2>
+            <h2>最新活動 Activity</h2>
+            <h2>最新動態 Posting</h2>
+        </a>
+        </div>
+        <div class="footer-item">
+            <h3>關於 About
+            </h3>
+            <br>
+            <a class="smalltitle" href="#">
+            <h2>關於我們 About Us</h2>
+            <h2>免責聲明 Declaration</h2>
+            <h2>服務條款 Serving Policy</h2>
+            <h2>人才招募 Join Us</h2>
+        </a>
+
+        
+        </div>
+        <div class="footer-item">
+            <h3>會員 Member</h3>
+            <br>
+            <a class="smalltitle" href="#">
+            <h2>註冊 SignIn</h2>
+            <h2>登入 LogIn</h2>
+            <h2>帳戶資料 Account</h2>
+            <h2>更多資訊 More Info</h2>
+        </a>
+        
+        </div>
+        <div class="footer-item">
+            <h3>法律條款 LAW</h3>
+            <br>
+            <a class="smalltitle" href="#">
+            <h2>隱私政策 Private Policy</h2>
+            <h2>瀏覽紀錄政策 Cookies Policy</h2>
+            <h2>銷售條款 Sales Policy</h2>
+
+        </a>
+        </div>
+    </div>
+        
+        </div>
+        <div class="copyright" style="font-size: 20px; font-family:'Open Sans', sans-serif;color: #b78d65 ;">
+            © 2023 本網站為緯育TibaMe前端工程師班CHD103專題作品，本平台僅供學習、展示之用。
+        </div>
+</footer>
+
+
+</body>
+</html>
