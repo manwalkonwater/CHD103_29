@@ -365,19 +365,30 @@ body{
             width: 100%
         }
 
-        .left-sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 300px;
-        background-color: black;
-        color: white;
-        font-size: 20px;
-        padding: 20px;
-        animation: slideAnimation 5s linear infinite;
-    }
+        .marquee-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+            font-size: 50px;
+            font-family: 'Jockey One', sans-serif;
+            color: #000000;
+            writing-mode: vertical-lr;
+
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translatey(-100%);
+            }
+
+            100% {
+                transform: translatey(100%);
+            }
+        }
     
+
     </style>
 </head>
 
@@ -408,7 +419,7 @@ body{
 
     <nav>
         <ul class="headerbar">
-            <li><a href="aboutus.html">關於我們 <br><br> ABOUT US</a></li>
+            <li><a href="index.html">關於我們 <br><br> ABOUT US</a></li>
             <li><a href="news.html">最新消息 <br><br>NEWS</a></li>
             <li><a href="promoption.html">限時特惠 <br><br>PROMTION</a></li>
             <li><a href="category.html">海鮮品項 <br><br>CATEGORY</a></li>
@@ -494,6 +505,8 @@ body{
     });
 </script>
 <div class="wrap">
+    <div class="marquee-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis rem fugit autem dolore necessitatibus? Qui consequatur quisquam saepe porro. Consequuntur tempore dolor libero! Eaque id, eligendi sapiente minus aspernatur hic?</div>
+    
     
 	<!-- item 1  -->
 	<div class="item">
