@@ -12,7 +12,7 @@
         
         .mb-4 {
     position: relative;
-    z-index: 1; /* Ensure .mb-4 stays on top of .bg-img */
+    z-index: 1; 
     transition: transform 0.3s ease;
 }
 .mb-4::after {
@@ -22,7 +22,7 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+background-color: rgba(0, 0, 0, 0.5); 
 opacity: 0;
 z-index: -1;
 transition: opacity 0.3s ease;
@@ -89,7 +89,7 @@ opacity: 1;
             position: relative;
             overflow: hidden;
             height: 500px;
-            /* Set the height of the slide */
+    
         }
 
         .slide {
@@ -97,15 +97,13 @@ opacity: 1;
             position: absolute;
             width: 100%;
             height: 500px;
-            /* Set the height of the slide */
+
         }
 
         img {
             width: 100%;
             height: 500px;
-            /* Set the height of the image */
             object-fit: cover;
-            /* Maintain aspect ratio and cover entire container */
         }
 
         .phone {
@@ -174,7 +172,7 @@ opacity: 1;
     }
 
     .video-text {
-    display: none; /* Initially hide the text */
+    display: none; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -209,7 +207,6 @@ opacity: 1;
 	list-style: none;
 }
 body{
-	padding: 100px 0;
 	background: linear-gradient(20deg,lightyellow,#b78d65) fixed center center / 100% 100%;
     width: 100%;
 
@@ -232,7 +229,7 @@ body{
 	display: flex;
     align-items: center;
     margin-bottom: 70px;
-    margin-right:200px;
+    margin-right:300px;
     font-family: 'Open Sans', sans-serif;
     color: white;
     font-size: 20px;
@@ -370,7 +367,7 @@ body{
             top: 0;
             left: 0;
             white-space: nowrap;
-            animation: marquee 20s linear infinite;
+            animation: marquee 10s linear infinite;
             font-size: 50px;
             font-family: 'Jockey One', sans-serif;
             color: #000000;
@@ -461,7 +458,7 @@ body{
                 slideIndex = 1;
             }
             slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
+            setTimeout(showSlides, 3000);
         }
     </script>
 
@@ -496,17 +493,16 @@ body{
             }
 
             fadeInOut();
-        }, 5000); // Display each line for 3 seconds
+        }, 5000); 
     };
 
     document.addEventListener('DOMContentLoaded', () => {
-        videoText.style.display = 'flex'; // Show the container after the page loads
-        fadeInOut(); // Start the animation
+        videoText.style.display = 'flex'; 
+        fadeInOut();
     });
 </script>
 <div class="wrap">
-    <div class="marquee-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis rem fugit autem dolore necessitatibus? Qui consequatur quisquam saepe porro. Consequuntur tempore dolor libero! Eaque id, eligendi sapiente minus aspernatur hic?</div>
-    
+    <div class="marquee-content">Thanks for choosing My Fish, it is always your best choice.</div>
     
 	<!-- item 1  -->
 	<div class="item">
@@ -559,7 +555,7 @@ body{
 			<img src="https://picsum.photos/600/350?random=13">
 		</div>
 	</div>
-    <!-- item 1  -->
+    <!-- item 5  -->
 	<div class="item">
 		<div class="pic">
 			<img src="https://picsum.photos/600/350?random=10">
@@ -572,7 +568,7 @@ body{
             <p>Through years of development, our seafood has earned a solid reputation in the international market, expanding not only in export markets but also establishing a strong customer base worldwide. Our products are exported to regions such as Asia, Europe, North America, and we have established close cooperation with partners from all around the world.</p>
         </div>
 	</div>
-	<!-- item 2  -->
+	<!-- item 6  -->
 	<div class="item">
 		<div class="txt">
 			<h2>社會責任
@@ -585,7 +581,7 @@ body{
 			<img src="https://picsum.photos/600/350?random=11">
 		</div>
 	</div>
-	<!-- item 3  -->
+	<!-- item 7  -->
 	<div class="item">
 		<div class="pic">
 			<img src="https://picsum.photos/600/350?random=12">

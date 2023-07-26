@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-<!-- Add Font Awesome CSS -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
     <style>
 
 .articlecontent {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* 設定間距 */
-  padding: 20px; /* 可以根據需要調整整體內距 */
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px; 
+padding: 20px;
 }
         
 
@@ -92,7 +92,6 @@
             position: relative;
             overflow: hidden;
             height: 500px;
-            /* Set the height of the slide */
         }
 
         .slide {
@@ -100,15 +99,12 @@
             position: absolute;
             width: 100%;
             height: 500px;
-            /* Set the height of the slide */
         }
 
         img {
             width: 100%;
             height: 500px;
-            /* Set the height of the image */
             object-fit: cover;
-            /* Maintain aspect ratio and cover entire container */
         }
 
         .phone {
@@ -165,9 +161,6 @@
             left: 0;
             bottom: 10px;
             text-decoration: underline;
-
-
-
         }
 
         .frontpage .image {
@@ -238,7 +231,7 @@
             width: 100%
         }
 
-        /* The image inside the article */
+        
         .innerarticle img {
             position: absolute;
             top: 0;
@@ -246,22 +239,23 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0; /* Start with the image hidden */
+            opacity: 0; 
             z-index: -1;
             transition: opacity 1s ease;
         }
 
         .mb-4 {
-            width: 300px; /* 調整圖片大小 */
-            height: 300px; /* 調整圖片大小 */
+            width: 300px;
+            height: 300px;
             position: relative;
             z-index: -2;
-            /* transition: transform 0.3s ease; */
+            
         }
 
-        /* The image to show when hovering the article */
+
+        
         .article:hover img {
-            opacity: 1; /* Show the image on hover */
+            opacity: 1; 
         }
 
 
@@ -278,22 +272,24 @@
         .mb-4:hover + .bg-img {
             opacity: 1;
         }
-
-        /* The content inside the article */
         .innerarticletext {
 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            color: #8c6843;
+            font-family: 'Open Sans', sans-serif;
+            letter-spacing: 3px;
         }
+        
 
-        /* Shrink the content when hovering the article */
         .article:hover .innerarticletext {
             transform: scale(0.9);
+            color: transparent
         }
 
-        /* The "Read More" button */
+
         .innerarticletext a.btn {
             color: #fff;
             text-decoration: none;
@@ -310,8 +306,8 @@
 
 .scroll-to-top{
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    bottom: 100px;
+    right: 70px;
     background-color: #b78d65;
     color: white;
     width: 40px;
@@ -327,8 +323,8 @@
 
 .go-back {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 50px;
+    right: 70px;
     background-color: #b78d65;
     color: white;
     width: 40px;
@@ -344,7 +340,7 @@
 
 .scroll-to-top:hover,
 .go-back:hover {
-  background-color: #8c6843;
+background-color: #8c6843;
 }
 
 
@@ -425,7 +421,7 @@
                 slideIndex = 1;
             }
             slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
+            setTimeout(showSlides, 3000); 
         }
     </script>
 
@@ -433,13 +429,13 @@
 
 <div class="article">
     <div class="innerarticle">
-        <!-- Change the image class from "mb-4" to "bg-img" and remove the alt attribute -->
+        
         <img class="bg-img" src="img/1.jpg">
         <div class="innerarticletext">
-            <!-- Add "mb-4" class to the image -->
+            
             <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">Architecture</h3>
-            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+            <h3 class="mb-3">秋刀魚</h3>
+            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
             <a class="btn" href=""><i class="readmore"></i>Read More</a>
         </div>
     </div>
@@ -447,104 +443,101 @@
 
 <div class="article">
     <div class="innerarticle">
-        <!-- Change the image class from "mb-4" to "bg-img" and remove the alt attribute -->
+
         <img class="bg-img" src="img/1.jpg">
         <div class="innerarticletext">
-            <!-- Add "mb-4" class to the image -->
             <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">Architecture</h3>
-            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+            <h3 class="mb-3">虱目魚</h3>
+            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
             <a class="btn" href=""><i class="readmore"></i>Read More</a>
         </div>
     </div>
 </div>
 <div class="article">
     <div class="innerarticle">
-        <!-- Change the image class from "mb-4" to "bg-img" and remove the alt attribute -->
+
         <img class="bg-img" src="img/1.jpg">
         <div class="innerarticletext">
-            <!-- Add "mb-4" class to the image -->
+
             <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">Architecture</h3>
-            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+            <h3 class="mb-3">黃魚</h3>
+            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
             <a class="btn" href=""><i class="readmore"></i>Read More</a>
         </div>
     </div>
 </div>
 <div class="article">
     <div class="innerarticle">
-        <!-- Change the image class from "mb-4" to "bg-img" and remove the alt attribute -->
+
         <img class="bg-img" src="img/1.jpg">
         <div class="innerarticletext">
-            <!-- Add "mb-4" class to the image -->
+    
             <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">Architecture</h3>
-            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+            <h3 class="mb-3">香魚</h3>
+            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
             <a class="btn" href=""><i class="readmore"></i>Read More</a>
         </div>
     </div>
 </div>
 <div class="article">
     <div class="innerarticle">
-        <!-- Change the image class from "mb-4" to "bg-img" and remove the alt attribute -->
         <img class="bg-img" src="img/1.jpg">
         <div class="innerarticletext">
-            <!-- Add "mb-4" class to the image -->
             <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">Architecture</h3>
-            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+            <h3 class="mb-3">午仔魚</h3>
+            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
             <a class="btn" href=""><i class="readmore"></i>Read More</a>
         </div>
     </div>
 </div>
 <div class="article">
     <div class="innerarticle">
-        <!-- Change the image class from "mb-4" to "bg-img" and remove the alt attribute -->
+        
         <img class="bg-img" src="img/1.jpg">
         <div class="innerarticletext">
-            <!-- Add "mb-4" class to the image -->
+
             <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">Architecture</h3>
-            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+            <h3 class="mb-3">白鯧</h3>
+            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
             <a class="btn" href=""><i class="readmore"></i>Read More</a>
         </div>
     </div>
 </div>
 <div class="article">
     <div class="innerarticle">
-        <!-- Change the image class from "mb-4" to "bg-img" and remove the alt attribute -->
+        
         <img class="bg-img" src="img/1.jpg">
         <div class="innerarticletext">
-            <!-- Add "mb-4" class to the image -->
+
             <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">Architecture</h3>
-            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+            <h3 class="mb-3">土魠魚</h3>
+            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
             <a class="btn" href=""><i class="readmore"></i>Read More</a>
         </div>
     </div>
 </div>
 <div class="article">
     <div class="innerarticle">
-        <!-- Change the image class from "mb-4" to "bg-img" and remove the alt attribute -->
+        
         <img class="bg-img" src="img/1.jpg">
         <div class="innerarticletext">
-            <!-- Add "mb-4" class to the image -->
+
             <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">Architecture</h3>
-            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+            <h3 class="mb-3">鱸魚</h3>
+            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
             <a class="btn" href=""><i class="readmore"></i>Read More</a>
         </div>
     </div>
 </div>
 <div class="article">
     <div class="innerarticle">
-        <!-- Change the image class from "mb-4" to "bg-img" and remove the alt attribute -->
+        
         <img class="bg-img" src="img/1.jpg">
         <div class="innerarticletext">
-            <!-- Add "mb-4" class to the image -->
+
             <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">Architecture</h3>
-            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+            <h3 class="mb-3">台灣鯛</h3>
+            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
             <a class="btn" href=""><i class="readmore"></i>Read More</a>
         </div>
     </div>
@@ -558,23 +551,20 @@
 </div>
 
   <script>
-    // Function to scroll to the top of the page
     function scrollToTop() {
-      window.scrollTo({
+    window.scrollTo({
         top: 0,
         behavior: 'smooth'
-      });
+    });
     }
-  
-    // Function to go back to the previous page
+
+    
     function goBack() {
-      window.history.back();
+    window.history.back();
     }
-  
-    // Add event listeners to the icons
     document.getElementById('scrollToTop').addEventListener('click', scrollToTop);
     document.getElementById('goBack').addEventListener('click', goBack);
-  </script>
+</script>
 
 <footer>
     <div class="footer-grid">

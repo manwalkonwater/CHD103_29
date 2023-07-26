@@ -6,12 +6,6 @@
     <title>最新消息 News</title>
     <style>
 
-.articlecontent {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* 設定間距 */
-  padding: 20px; /* 可以根據需要調整整體內距 */
-}
         
 
         .headerwheatbar {
@@ -87,7 +81,6 @@
             position: relative;
             overflow: hidden;
             height: 500px;
-            /* Set the height of the slide */
         }
 
         .slide {
@@ -95,15 +88,12 @@
             position: absolute;
             width: 100%;
             height: 500px;
-            /* Set the height of the slide */
         }
 
         img {
             width: 100%;
             height: 500px;
-            /* Set the height of the image */
             object-fit: cover;
-            /* Maintain aspect ratio and cover entire container */
         }
 
         .phone {
@@ -248,7 +238,6 @@
 h1 {
     text-align: center;
 }
-/* Initially hide the news content */
 
 
 .news-content-text {
@@ -256,8 +245,8 @@ h1 {
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.3s ease, opacity 0.3s ease;
-    transform-origin: top; /* Set the transform origin to the top */
-    transform: scaleY(0); /* Initially scale the content vertically to 0 */
+    transform-origin: top; 
+    transform: scaleY(0); 
     font-size: 40px;
     display: block;
     padding: 60px;
@@ -290,24 +279,20 @@ h1 {
     background-color:#b78d65;
     color:black
 }
-        /* Show the news content on hover */
         .news-item:hover .news-content-text {
-            max-height: 2000px; /* Set the desired expanded height */
+            max-height: 2000px;
             opacity: 1;
-            transform: scaleY(1); /* Expand the content vertically from top to bottom */
+            transform: scaleY(1); 
         }
 
-        /* Set the transition for smooth expansion */
         .news-item .news-content-text {
             transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
         }
 
-        /* Initially hide the news images */
         .news-image img {
             opacity: 1;
         }
 
-        /* Show the news images on hover */
         .news-item:hover .news-image img {
             opacity: 1;
         }
@@ -381,15 +366,12 @@ h1 {
             slideIndex = 1;
         }
         slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 3000); // Change image every 3 seconds
+        setTimeout(showSlides, 3000); 
     }
 </script>
-<!-- Remove onmouseover attribute from each news-item -->
 <div class="news-list" id="newsList">
-    <!-- News Item 1 -->
     <div class="news-item">
         <div class="news-content">
-            <!-- News content including title, date, and image -->
             <div class="news-title">持續輔導臺灣鯛精進生產穩定外銷市場</div>
             <div class="news-date">2023-07-23</div>
             <div class="news-image"><img src="img/1.jpg" alt="圖片"></div>
@@ -405,10 +387,10 @@ h1 {
         </div>
     </div>
 
-    <!-- News Item 2 -->
+
     <div class="news-item">
         <div class="news-content">
-            <!-- News content including title, date, and image -->
+
             <div class="news-title">我駐泰國臺北經濟文化辦事處與泰國貿易經濟辦事處簽署漁業合作執行協議</div>
             <div class="news-date">2023-07-24</div>
             <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
@@ -431,120 +413,105 @@ h1 {
     </div>
 </div>
 
- <!-- News Item 2 -->
+
  <div class="news-item">
     <div class="news-content">
-        <!-- News content including title, date, and image -->
         <div class="news-title">標題2</div>
         <div class="news-date">2023-07-24</div>
         <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
         <div class="news-content-text">
-            內文2... <!-- Add the content for News Item 2 here -->
+            內文2... 
         </div>
     </div>
 </div>
 </div>
 
- <!-- News Item 2 -->
  <div class="news-item">
     <div class="news-content">
-        <!-- News content including title, date, and image -->
         <div class="news-title">標題2</div>
         <div class="news-date">2023-07-24</div>
         <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
         <div class="news-content-text">
-            內文2... <!-- Add the content for News Item 2 here -->
+            內文2... 
         </div>
     </div>
 </div>
 </div>
 
- <!-- News Item 2 -->
- <div class="news-item">
+<div class="news-item">
     <div class="news-content">
-        <!-- News content including title, date, and image -->
         <div class="news-title">標題2</div>
         <div class="news-date">2023-07-24</div>
         <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
         <div class="news-content-text">
-            內文2... <!-- Add the content for News Item 2 here -->
+            內文2... 
         </div>
     </div>
 </div>
 </div>
 
- <!-- News Item 2 -->
  <div class="news-item">
     <div class="news-content">
-        <!-- News content including title, date, and image -->
         <div class="news-title">標題2</div>
         <div class="news-date">2023-07-24</div>
         <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
         <div class="news-content-text">
-            內文2... <!-- Add the content for News Item 2 here -->
+            內文2...
         </div>
     </div>
 </div>
 </div>
 
- <!-- News Item 2 -->
  <div class="news-item">
     <div class="news-content">
-        <!-- News content including title, date, and image -->
         <div class="news-title">標題2</div>
         <div class="news-date">2023-07-24</div>
         <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
         <div class="news-content-text">
-            內文2... <!-- Add the content for News Item 2 here -->
+            內文2...
         </div>
     </div>
 </div>
 </div>
 
- <!-- News Item 2 -->
- <div class="news-item">
+<div class="news-item">
     <div class="news-content">
-        <!-- News content including title, date, and image -->
         <div class="news-title">標題2</div>
         <div class="news-date">2023-07-24</div>
         <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
         <div class="news-content-text">
-            內文2... <!-- Add the content for News Item 2 here -->
+            內文2...
         </div>
     </div>
 </div>
 </div>
 
- <!-- News Item 2 -->
- <div class="news-item">
+<div class="news-item">
     <div class="news-content">
-        <!-- News content including title, date, and image -->
         <div class="news-title">標題2</div>
         <div class="news-date">2023-07-24</div>
         <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
         <div class="news-content-text">
-            內文2... <!-- Add the content for News Item 2 here -->
+            內文2...
         </div>
     </div>
 </div>
 </div>
 
- <!-- News Item 2 -->
- <div class="news-item">
+
+<div class="news-item">
     <div class="news-content">
-        <!-- News content including title, date, and image -->
         <div class="news-title">標題2</div>
         <div class="news-date">2023-07-24</div>
         <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
         <div class="news-content-text">
-            內文2... <!-- Add the content for News Item 2 here -->
+            內文2...
         </div>
     </div>
 </div>
 </div>
 
 <script>
-    // Function to toggle the expansion of news content on click
     function toggleNewsContent(newsItem) {
         newsItem.classList.toggle('expanded');
     }

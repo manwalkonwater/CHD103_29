@@ -9,8 +9,8 @@
     .articlecontent {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* 設定間距 */
-  padding: 20px; /* 可以根據需要調整整體內距 */
+  gap: 20px; 
+  padding: 20px; 
 }
         
 
@@ -86,7 +86,6 @@
             position: relative;
             overflow: hidden;
             height: 500px;
-            /* Set the height of the slide */
         }
 
         .slide {
@@ -94,15 +93,12 @@
             position: absolute;
             width: 100%;
             height: 500px;
-            /* Set the height of the slide */
         }
 
         img {
             width: 100%;
             height: 500px;
-            /* Set the height of the image */
             object-fit: cover;
-            /* Maintain aspect ratio and cover entire container */
         }
 
         .phone {
@@ -254,8 +250,7 @@ h1 {
     color: #b78d65;
     border:10px solid #b78d65;
     background-image: url("img/2.jpg");
-      /* 设置图片的大小和位置 */
-      background-size: cover; /* 调整图片尺寸以覆盖整个元素 */
+    background-size: cover; 
 }
 
 .container{
@@ -267,7 +262,7 @@ h1 {
 .contactus :hover{
     background-color: white;
 }
-/* Initially hide the news content */
+
 
 </style>
 <body>
@@ -337,10 +332,9 @@ h1 {
             slideIndex = 1;
         }
         slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 3000); // Change image every 3 seconds
+        setTimeout(showSlides, 3000); 
     }
 </script>
-  <!-- Contact Start -->
 <div class="contactus">
     <div class="container">
         <iframe class="map" style="width: 100%;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.249035944519!2d121.22244777650324!3d24.957640341359983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468223631e2f209%3A0x581275cd0db5d98f!2zMzIw5qGD5Zut5biC5Lit5Z2c5biC5b6p6IiI6LevNDbomZ855qiT!5e0!3m2!1szh-TW!2stw!4v1690140396909!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -405,7 +399,7 @@ h1 {
         </div>
     </div>
 </div>
-<!-- Contact End -->
+
 
     <footer>
     <div class="footer-grid">

@@ -84,7 +84,25 @@ color:#b78d65;
     position: relative;
     
 }
-
+.go-back {
+    position: fixed;
+    bottom: 50px;
+    right: 70px;
+    background-color: #b78d65;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+.go-back:hover {
+background-color: #8c6843;
+}
 
 </style>
 
@@ -105,8 +123,7 @@ color:#b78d65;
     <button type="submit">忘記密碼</button>
     <button type="submit">註冊</button>
 </div>
-
-  </div>
+<div id="goBack" class="go-back">Pre</div>
   <script>
     document.getElementById('loginForm').addEventListener('submit', function(event) {
   event.preventDefault();
@@ -125,6 +142,13 @@ color:#b78d65;
 });
   </script>
 
-  
+<script>
+
+  function goBack() {
+    window.history.back();
+  }
+  document.getElementById('goBack').addEventListener('click', goBack);
+</script>
+
 </body>
 </html>
