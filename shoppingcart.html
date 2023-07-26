@@ -140,7 +140,6 @@ button:hover {
     <div class="cart-container">
         <h1>購物車 Shopping Cart</h1>
         <ul id="cart-items">
-            <!-- Cart items will be dynamically added here using JavaScript -->
         </ul>
         <div class="total">總金額 Total: <span id="total-price">$599</span></div>
         <button id="clear-cart">清空購物車 Clear Cart</button>
@@ -159,7 +158,6 @@ button:hover {
                 <option value="cash">現金</option>
             </select>
 
-            <!-- Your dropdown for county and district selection here -->
             <div class="dropdown">
                 <label for="county_box">請選取送貨地址</label>
                 <select name="county" id="county_box">
@@ -182,25 +180,26 @@ button:hover {
         </div>
     </div>
     <script>
-        // Add a click event listener to the "點擊付款" button
-        document.getElementById('checkout-btn').addEventListener('click', function () {
-          // Trigger the SweetAlert with custom options
-          Swal.fire(
-  '下單完成!',
-  'You clicked the button!',
-  'success'
+    
+    document.getElementById('checkout-btn').addEventListener('click', function () {
+
+    Swal.fire(
+'下單完成!',
+'You clicked the button!',
+'success' 
 )
-          
-          });
-      </script>
+
+// window.location.replace("./promoption.html")
+// });
+
+</script>
     <script>
         document.getElementById("payButton").addEventListener("click", function() {
-            // 替換以下 MerchantID 為您自己的綠界支付商戶編號
             var merchantID = "YourMerchantID";
             var productName = "測試商品";
             var amount = "100";
 
-            // 導向綠界支付測試頁面
+    
             window.location.href = "https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5?MerchantID=" + merchantID + "&MerchantTradeNo=" + Date.now() + "&MerchantTradeDate=" + Date.now() + "&TotalAmount=" + amount + "&TradeDesc=" + productName + "&ItemName=" + productName;
         });
     </script>
