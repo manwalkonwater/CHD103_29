@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="reset.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="headerfooter.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script> 
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us 關於我們</title>
     <style>
+
         .video video {
             width: 100%;
         }
@@ -35,12 +30,38 @@
             background-color: #000000;
         }
 
-        h2 {
+
+        .wrap .item{
+            background-color: #000000;
+            text-align: left;
+            display: flex;
+            margin: auto;
+        }
+
+        .wrap .item .txt{
+            position: flex;
+            display: inline-flex;
+            width: 50%;
+            color: #b78d65;
+            margin: auto;
+            padding:20px;
+
+        }
+
+        .wrap .item .pic img {
+            width: 100%;
+            vertical-align: middle;
+            border-radius: 70%;
+            margin-bottom: 30px;
+            margin-top:30px;
+        }
+
+        h2{
             padding: 20px;
             width: 100%;
         }
 
-        p {
+        p{
             padding: 10px;
             letter-spacing: 1px;
             margin: auto;
@@ -50,28 +71,28 @@
 
         .marquee-content-before {
             position: fixed;
-            top: 600px;
+            top: 615px;
             left: 0;
             white-space: nowrap;
             animation: marquee 50s linear infinite;
             font-size: 50px;
             font-family: 'Open Sans', sans-serif;
-            color: white;
-            writing-mode: vertical-lr;
-            font-weight: bolder;
+            color:white;
+            writing-mode:vertical-lr;
+            font-weight:  bolder;
         }
 
         .marquee-content {
             position: absolute;
-            top: 715px;
-            left: 0;
+            top: 615px;
+            left: 0; 
             white-space: nowrap;
             animation: marquee 20s linear infinite;
             writing-mode: vertical-lr;
             font-size: 50px;
             font-family: 'Open Sans', sans-serif;
-            color: white;
-            font-weight: bolder;
+            color:white;
+            font-weight:  bolder;
         }
 
         @keyframes marquee {
@@ -83,11 +104,12 @@
                 transform: translateY(100%);
             }
         }
+
     </style>
 
     <script>
-        $(document).ready(function () {
-            $(window).scroll(function () {
+        $(document).ready(function(){
+            $(window).scroll(function(){
                 $('#marquee-content').addClass('marquee-content')
             })
 
@@ -104,76 +126,48 @@
             <li><a href="index.html">關於我們 <br><br><br> ABOUT US</a></li>
             <li><a href="news.html">最新消息 <br><br><br>NEWS</a></li>
             <li><a href="promoption.html">限時特惠 <br><br><br>PROMTION</a></li>
-            <li><a href="categorytest.html">海鮮品項 <br><br><br>CATEGORY</a></li>
+            <li><a href="category.html">海鮮品項 <br><br><br>CATEGORY</a></li>
             <li><a href="contactus.html">聯絡資訊 <br><br><br>CONTACT</a></li>
             <li><a href="member.html">會員中心 <br><br><br>MEMBERS</a></li>
         </ul>
     </nav>
 
-
-    <div id="owl-demo" class="owl-carousel owl-theme frontpageblackblock">
-
-
-        <div class="item">
-            <img src="img/2.jpg" alt="">
-        </div>
-        <div class="item">
-            <img src="img/12.png">
-        </div>
-        <div class="item">
-            <img src="img/2.jpg">
-
-        </div>
-        <div class="item">
-            <img src="img/12.png">
-
-        </div>
-        <div class="item">
-            <img src="img/2.jpg">
-
-        </div>
-        <div class="item">
-            <img src="img/12.png">
-
+    <div class="frontpageblackblock">
+        <div class="slideshow-container">
+            <div class="slide fade">slide
+                <img src="img/1.jpg" alt="">
+            </div>
+            <div class="slide fade">
+                <img src="img/2.jpg" alt="">
+            </div>
+            <div class="slide fade">
+                <img src="img/12.png" alt="">
+            </div>
         </div>
 
-
+        <div class="categoryletter">
+            ABOUT US
+        </div>
+        <!-- <div id="marquee-content" class="marquee-content-before">Thanks for choosing My Fish, it is always your best choice.</div> -->
     </div>
-
-    </div>
-    <div class="categoryletter">
-        ABOUT US
-    </div>
-
+    <div class="marquee-content">Thanks for choosing My Fish, it is always your best choice.</div>
     <script>
-        var owl = $('.owl-carousel');
-        owl.owlCarousel({
-            items: 1,
-            loop: true,
-            margin: 10,
-            autoplay: true,
-            autoplayTimeout: 2000,
-            // autoplayHoverPause: true
-        });
-        $('.play').on('click', function () {
-            owl.trigger('play.owl.autoplay', [2000])
-        })
-        $('.stop').on('click', function () {
-            owl.trigger('stop.owl.autoplay')
-        })
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
     </script>
-
-    <script>
-        $(document).ready(function () {
-
-            $("#owl-demo").owlCarousel({
-                navigation: true
-            });
-
-        });
-    </script>
-
-
 
 
 

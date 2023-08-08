@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="reset.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="headerfooter.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海鮮品項 Category</title>
+    <style>
+        body {
+            background-image: url(/img/2.jpg);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            line-height: 1.5em;
+            letter-spacing: 0.1em;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .pic img {
+            width: 100%;
+            height: 100%;
+            vertical-align: auto;
+            transition: 1s;
+            display: flex;
+            opacity: 0.8;
+        }
+
+
+        .swiper-container {
+            width: 90%;
+        }
+
+        @media (max-width: 768px) {
+            .swiper-container {
+                width: 100%;
+            }
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45%;
+            margin:auto;
+            padding: 20px 20px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+        }
+
+        button {
+            background-color: #8c6843;
+            color: #fff;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            padding: 20px 50px;
+            cursor: pointer;
+        }
+
+
+
+        @media (max-width: 700px) {
+            .search-container {
+                flex-direction:column;
+            }
+
+            input[type="text"],
+            button {
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+        }
+
+    .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 50px;
+            padding: 20px;
+        }
+
+        .content .item {
+            width: 33%;
+            display: flex;
+            margin-bottom: 30px;
+            border: 5px solid white;
+            transition: 1s;
+            position: relative;
+        }
+
+        .content .item .pic a {
+            color: white;
+            background-color: rgb(0, 0, 0, 0.5);
+            font-size: 30px;
+        }
+
+        .content .item .pic a:hover {
+            color: black;
+            background-color: rgb(255, 255, 255, 0.7);
+            font-style: bold;
+        }
+
+        .content .item:hover {
+            transform: translateY(-20px);
+            border: 5px solid wheat;
+        }
+
+        .content .item:hover img {
+            transform: scale(1.2);
+        }
+
+        .content .item:hover .movie {
+            background-color: #d1e3e8;
+        }
+
+
+        .item .pic {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item .movie {
+            width: 30%;
+            background-color: #e11b22;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+            display: none;
+        }
+
+        .item .movie:hover:after {
+            opacity: 1;
+        }
+
+
+        .movie li {
+            padding: 5px 10px;
+        }
+
+        .movie a {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 1s;
+        }
+
+
+        .item .text {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("https://picsum.photos/300/200/?random=50"); */
+            background-image: url(img/12.png);
+            background-size: cover;
+            transform: scale(0);
+            transition: 0.5s;
+        }
+
+        .item .pic:hover .text {
+            transform: scale(1);
+        }
+
+        .item .pic:hover {
+            opacity: 1;
+        }
+
+
+
+        .text li::before {
+            top: 0;
+            left: 0;
+        }
+
+        .text li::after {
+            bottom: 0;
+            right: 0;
+        }
+
+        .text li:hover:before,
+        .text li:hover::after {
+            width: 100%;
+        }
+
+
+        .text li::before,
+        .text li::after {
+            content: "";
+            width: 0;
+            height: 10px;
+            background-color: wheat;
+            position: absolute;
+            transition: 0.8s;
+        }
+
+        .text li a::before,
+        .text li a::after {
+            content: "";
+            width: 10px;
+            height: 0;
+            background-color: wheat;
+            position: absolute;
+            transition: 0.6s;
+        }
+
+        .text li a::before {
+            bottom: 0;
+            left: 0;
+        }
+
+        .text li a::after {
+            top: 0;
+            right: 0;
+        }
+
+        .text li a:hover:before,
+        .text li a:hover::after {
+            height: 100%;
+        }
+
+        .text h3:hover:after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 50px 10px 25px;
+            }
+
+            .content .item {
+                width: 95%;
+                margin: 0 auto 30px;
+            }
+
+            .content .item:nth-child(even) {
+                flex-direction: row-reverse;
+                right: 0;
+            }
+
+            .item .text {
+                padding: 0 10px 5px;
+            }
+
+            .text h2 {
+                font-size: 14px;
+                border: 2px solid white;
+            }
+
+            .text h3 {
+                font-size: 12px;
+                padding: 5px 0;
+            }
+
+            .text h3::after {
+                height: 2px;
+            }
+
+            .movie li~li {
+                display: none;
+            }
+
+            .movie a {
+                font-size: 16px;
+            }
+        }
+
+
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 70px;
+            background-color: #b78d65;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+        }
+
+        .go-back {
+            position: fixed;
+            bottom: 50px;
+            right: 70px;
+            background-color: #b78d65;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+        }
+
+        .scroll-to-top:hover,
+        .go-back:hover {
+            background-color: #8c6843;
+        }
+
+        .searchbutton{
+            display: flex;
+            background-color: black;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <nav>
+        <ul class="headerbar">
+            <li><a href="#"><img src="img/logo2.png" alt=""></a></li>
+            <li><a href="index.html">關於我們 <br><br> ABOUT US</a></li>
+            <li><a href="news.html">最新消息 <br><br>NEWS</a></li>
+            <li><a href="promoption.html">限時特惠 <br><br>PROMTION</a></li>
+            <li><a href="category.html">海鮮品項 <br><br>CATEGORY</a></li>
+            <li><a href="contactus.html">聯絡資訊 <br><br>CONTACT</a></li>
+            <li><a href="member.html">會員中心 <br><br>MEMBERS</a></li>
+        </ul>
+    </nav>
+
+    <div id="owl-demo" class="owl-carousel owl-theme frontpageblackblock">
+
+
+        <div class="item">
+            <img src="img/2.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="img/12.png">
+        </div>
+        <div class="item">
+            <img src="img/2.jpg">
+
+        </div>
+        <div class="item">
+            <img src="img/12.png">
+
+        </div>
+        <div class="item">
+            <img src="img/2.jpg">
+
+        </div>
+        <div class="item">
+            <img src="img/12.png">
+
+        </div>
+
+
+    </div>
+
+    </div>
+    
+    <div class="searchbutton">
+    <div class="categoryletter">
+        CATEGORY
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="Search...">
+        <button type="submit">Search</button>
+    </div>
+</div>
+    
+
+
+    <script>
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            // autoplayHoverPause: true
+        });
+        $('.play').on('click', function () {
+            owl.trigger('play.owl.autoplay', [2000])
+        })
+        $('.stop').on('click', function () {
+            owl.trigger('stop.owl.autoplay')
+        })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#owl-demo").owlCarousel({
+                navigation: true
+            });
+
+        });
+    </script>
+
+
+    <div class="content">
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=11">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=12">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=13">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=14">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=15">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=16">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=17">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=18">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=19">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=20">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=21">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=10">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div id="scrollToTop" class="scroll-to-top">Top
+    </div>
+
+    <div id="goBack" class="go-back">Pre
+    </div>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+
+        function goBack() {
+            window.history.back();
+        }
+        document.getElementById('scrollToTop').addEventListener('click', scrollToTop);
+        document.getElementById('goBack').addEventListener('click', goBack);
+    </script>
+
+    <footer>
+        <div class="wheatbar">
+            <a href="#"><img src="img/logo2.png" alt=""></a>
+
+
+
+        </div>
+        <div class="footer-grid">
+
+            <div class="footer-item">
+                <h3>新聞 NEWS</h3>
+                <br>
+                <a class="smalltitle" href="#">
+                    <h2>熱門新聞 Hot News</h2>
+                    <h2>最新活動 Activity</h2>
+                    <h2>最新動態 Posting</h2>
+                </a>
+            </div>
+            <div class="footer-item">
+                <h3>關於 About
+                </h3>
+                <br>
+                <a class="smalltitle" href="#">
+                    <h2>關於我們 About Us</h2>
+                    <h2>免責聲明 Declaration</h2>
+                    <h2>服務條款 Service</h2>
+                    <h2>人才招募 Join Us</h2>
+                </a>
+
+
+            </div>
+            <div class="footer-item">
+                <h3>會員 Member</h3>
+                <br>
+                <a class="smalltitle" href="#">
+                    <h2>註冊 SignIn</h2>
+                    <h2>登入 LogIn</h2>
+                    <h2>帳戶資料 Account</h2>
+                    <h2>更多資訊 More Info</h2>
+                </a>
+
+            </div>
+            <div class="footer-item">
+                <h3>法律條款 LAW</h3>
+                <br>
+                <a class="smalltitle" href="#">
+                    <h2>隱私政策 Privacy</h2>
+                    <h2>瀏覽紀錄政策 Cookies</h2>
+                    <h2>銷售條款 Sales Policy</h2>
+
+                </a>
+            </div>
+
+        </div>
+
+        </div>
+        <div class="phone">
+            <a href="#"><img src="img/phone.png" alt="">(03) 4258183</a>
+            <a href="#"><img src="img/email.png" alt="">tibame.gmail.com</a>
+            <a href="#"><img src="img/address.png" alt="">320桃園市中壢區復興路46號9樓</a>
+            <a href="#"><img src="img/facebook.png" alt=""></a>
+            <a href="#"><img src="img/twitter.png" alt=""></a>
+            <a href="#"><img src="img/ig.png" alt=""></a>
+            <a href="#"><img src="img/line.png" alt=""></a>
+            <a href="#"><img src="img/youtube.png" alt=""></a>
+        </div>
+
+        <div class="seperator">
+        </div>
+        <div class="copyright" style="font-size: 20px; font-family:'Open Sans', sans-serif;color: #b78d65 ;">
+            © 2023 本網站為緯育TibaMe前端工程師班CHD103專題作品，本平台僅供學習、展示之用。
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

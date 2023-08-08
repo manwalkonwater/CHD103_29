@@ -10,46 +10,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>海鮮品項 Category</title>
     <style>
-
-.articlecontent {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 20px; 
-padding: 20px;
-}
-        
-
-        .headerwheatbar {
-            background-color: wheat;
-            width: 100%;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-
-
+        .articlecontent {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
         }
-        .firstarticle .bg-img{
-            display: none;
+
+        .mb-4 {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .mb-4::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background-color: rgba(0, 0, 0, 0.5);
             opacity: 0;
             z-index: -1;
-            transition: opacity 1s ease;
+            transition: opacity 0.3s ease;
         }
 
-        .firstarticle:hover .bg-img{
-            display: block;
+        .firstarticle:hover .mb-4::after {
             opacity: 1;
         }
 
-        .headerwheatbar .logo {
-            margin-right: auto;
-            margin-left: 0;
-            margin-bottom: 0;
-        }
+
 
 
         .headerbar {
@@ -64,17 +55,29 @@ padding: 20px;
 
         }
 
+        .categoryletter {
+            font-size: 100px;
+            color: #b78d65;
+            position: relative;
+            left: 0;
+            bottom: 300px;
+            text-decoration: underline;
+            background-color: black;
+        }
+
         .headerbar li {
             flex: 1;
             text-align: center;
+            line-height: 0.6;
+
         }
 
         .headerbar a {
             color: #b78d65;
             text-decoration: none;
-            font-size: 25px;
+            font-size: 16x;
             display: block;
-            padding: 20px 10px;
+            padding: 24px 10px;
             font-family: 'Open Sans', sans-serif;
             font-weight: 500;
 
@@ -92,6 +95,7 @@ padding: 20px;
             position: relative;
             overflow: hidden;
             height: 500px;
+
         }
 
         .slide {
@@ -99,11 +103,10 @@ padding: 20px;
             position: absolute;
             width: 100%;
             height: 500px;
+
         }
 
         img {
-            width: 100%;
-            height: 500px;
             object-fit: cover;
         }
 
@@ -116,7 +119,8 @@ padding: 20px;
             left: 0;
             bottom: 0;
         }
-        .phone a{
+
+        .phone a {
             text-decoration: none;
             font-family: 'Open Sans', sans-serif;
             font-weight: 500;
@@ -126,7 +130,7 @@ padding: 20px;
             display: flex;
         }
 
-        .phone :hover{
+        .phone :hover {
             color: white;
             transition: 0.5s;
             background-color: #b78d65;
@@ -163,6 +167,65 @@ padding: 20px;
             text-decoration: underline;
         }
 
+        .video {
+            width: 100%;
+            position: relative;
+        }
+
+        .video video {
+            width: 100%;
+        }
+
+        .video-text {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #b78d65;
+            font-size: 30px;
+            padding: 10px;
+            width: 75%;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .categoryletter {
+            font-size: 100px;
+            color: #b78d65;
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            text-decoration: underline;
+        }
+
         .frontpage .image {
             width: 100px;
             height: 100px;
@@ -181,14 +244,15 @@ padding: 20px;
             text-align: center;
         }
 
-        footer h3{
+        footer h3 {
             font-size: 20px;
             font-family: 'Open Sans', sans-serif;
             margin: auto;
         }
-        footer h2{
+
+        footer h2 {
             color: gray;
-            margin:10px;
+            margin: 10px;
             padding: 10px;
             font-size: 20px;
             font-family: 'Open Sans', sans-serif;
@@ -213,12 +277,12 @@ padding: 20px;
             margin-bottom: 10px;
         }
 
-        .smalltitle{
+        .smalltitle {
             text-decoration: none;
         }
 
-        .smalltitle :hover{
-            color:#b78d65;
+        .smalltitle :hover {
+            color: #b78d65;
         }
 
 
@@ -226,12 +290,13 @@ padding: 20px;
         .copyright {
             color: white;
         }
+
         .article {
             position: relative;
             width: 100%
         }
 
-        
+
         .innerarticle img {
             position: absolute;
             top: 0;
@@ -239,7 +304,7 @@ padding: 20px;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0; 
+            opacity: 0;
             z-index: -1;
             transition: opacity 1s ease;
         }
@@ -249,19 +314,20 @@ padding: 20px;
             height: 300px;
             position: relative;
             z-index: -2;
-            
+
         }
 
 
-        
+
         .article:hover img {
-            opacity: 1; 
+            opacity: 1;
         }
 
 
         .firstarticle:hover .mb-4::after {
             opacity: 1;
         }
+
         .article:hover .bg-img {
             opacity: 1;
         }
@@ -269,9 +335,11 @@ padding: 20px;
         .firstarticle:hover .bg-img {
             opacity: 1;
         }
-        .mb-4:hover + .bg-img {
+
+        .mb-4:hover+.bg-img {
             opacity: 1;
         }
+
         .innerarticletext {
 
             display: flex;
@@ -282,7 +350,7 @@ padding: 20px;
             font-family: 'Open Sans', sans-serif;
             letter-spacing: 3px;
         }
-        
+
 
         .article:hover .innerarticletext {
             transform: scale(0.9);
@@ -304,57 +372,50 @@ padding: 20px;
             background-color: #8c6843;
         }
 
-.scroll-to-top{
-    position: fixed;
-    bottom: 100px;
-    right: 70px;
-    background-color: #b78d65;
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
-}
+        .scroll-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 70px;
+            background-color: #b78d65;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+        }
 
-.go-back {
-    position: fixed;
-    bottom: 50px;
-    right: 70px;
-    background-color: #b78d65;
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
-}
+        .go-back {
+            position: fixed;
+            bottom: 50px;
+            right: 70px;
+            background-color: #b78d65;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+        }
 
-.scroll-to-top:hover,
-.go-back:hover {
-background-color: #8c6843;
-}
-
-
-
-
-        
-
-        
+        .scroll-to-top:hover,
+        .go-back:hover {
+            background-color: #8c6843;
+        }
     </style>
 </head>
 
 <body>
 
-    <header>
+    <!-- <header>
 
         <div class="headerwheatbar">
             <a href="#"><img src="img/logo2.png" alt=""></a>
@@ -375,17 +436,17 @@ background-color: #8c6843;
                 <a href="#"><img src="img/youtube.png" alt=""></a>
             </div>
         </div>
-    </header>
+    </header> -->
 
     <nav>
         <ul class="headerbar">
+            <li><a href="#"><img src="img/logo2.png" alt=""></a></li>
             <li><a href="index.html">關於我們 <br><br> ABOUT US</a></li>
             <li><a href="news.html">最新消息 <br><br>NEWS</a></li>
             <li><a href="promoption.html">限時特惠 <br><br>PROMTION</a></li>
             <li><a href="category.html">海鮮品項 <br><br>CATEGORY</a></li>
             <li><a href="contactus.html">聯絡資訊 <br><br>CONTACT</a></li>
             <li><a href="member.html">會員中心 <br><br>MEMBERS</a></li>
-            <li><a href="shoppingcart.html">購物車 <br><br>SHOPPING CART</a></li>
         </ul>
     </nav>
 
@@ -421,203 +482,203 @@ background-color: #8c6843;
                 slideIndex = 1;
             }
             slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000); 
+            setTimeout(showSlides, 3000);
         }
     </script>
 
-<div class="articlecontent">
+    <div class="articlecontent">
 
-<div class="article">
-    <div class="innerarticle">
-        
-        <img class="bg-img" src="img/1.jpg">
-        <div class="innerarticletext">
-            
-            <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">秋刀魚</h3>
-            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-            <a class="btn" href=""><i class="readmore"></i>Read More</a>
+        <div class="article">
+            <div class="innerarticle">
+
+                <img class="bg-img" src="img/1.jpg">
+                <div class="innerarticletext">
+
+                    <img class="mb-4" src="img/2.jpg" alt="Icon">
+                    <h3 class="mb-3">秋刀魚</h3>
+                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
+                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="article">
+            <div class="innerarticle">
+
+                <img class="bg-img" src="img/1.jpg">
+                <div class="innerarticletext">
+                    <img class="mb-4" src="img/2.jpg" alt="Icon">
+                    <h3 class="mb-3">虱目魚</h3>
+                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
+                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="article">
+            <div class="innerarticle">
+
+                <img class="bg-img" src="img/1.jpg">
+                <div class="innerarticletext">
+
+                    <img class="mb-4" src="img/2.jpg" alt="Icon">
+                    <h3 class="mb-3">黃魚</h3>
+                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
+                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="article">
+            <div class="innerarticle">
+
+                <img class="bg-img" src="img/1.jpg">
+                <div class="innerarticletext">
+
+                    <img class="mb-4" src="img/2.jpg" alt="Icon">
+                    <h3 class="mb-3">香魚</h3>
+                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
+                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="article">
+            <div class="innerarticle">
+                <img class="bg-img" src="img/1.jpg">
+                <div class="innerarticletext">
+                    <img class="mb-4" src="img/2.jpg" alt="Icon">
+                    <h3 class="mb-3">午仔魚</h3>
+                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
+                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="article">
+            <div class="innerarticle">
+
+                <img class="bg-img" src="img/1.jpg">
+                <div class="innerarticletext">
+
+                    <img class="mb-4" src="img/2.jpg" alt="Icon">
+                    <h3 class="mb-3">白鯧</h3>
+                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
+                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="article">
+            <div class="innerarticle">
+
+                <img class="bg-img" src="img/1.jpg">
+                <div class="innerarticletext">
+
+                    <img class="mb-4" src="img/2.jpg" alt="Icon">
+                    <h3 class="mb-3">土魠魚</h3>
+                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
+                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="article">
+            <div class="innerarticle">
+
+                <img class="bg-img" src="img/1.jpg">
+                <div class="innerarticletext">
+
+                    <img class="mb-4" src="img/2.jpg" alt="Icon">
+                    <h3 class="mb-3">鱸魚</h3>
+                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
+                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="article">
+            <div class="innerarticle">
+
+                <img class="bg-img" src="img/1.jpg">
+                <div class="innerarticletext">
+
+                    <img class="mb-4" src="img/2.jpg" alt="Icon">
+                    <h3 class="mb-3">台灣鯛</h3>
+                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
+                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="article">
-    <div class="innerarticle">
-
-        <img class="bg-img" src="img/1.jpg">
-        <div class="innerarticletext">
-            <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">虱目魚</h3>
-            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-            <a class="btn" href=""><i class="readmore"></i>Read More</a>
-        </div>
+    <div id="scrollToTop" class="scroll-to-top">Top
     </div>
-</div>
-<div class="article">
-    <div class="innerarticle">
 
-        <img class="bg-img" src="img/1.jpg">
-        <div class="innerarticletext">
-
-            <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">黃魚</h3>
-            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-            <a class="btn" href=""><i class="readmore"></i>Read More</a>
-        </div>
+    <div id="goBack" class="go-back">Pre
     </div>
-</div>
-<div class="article">
-    <div class="innerarticle">
 
-        <img class="bg-img" src="img/1.jpg">
-        <div class="innerarticletext">
-    
-            <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">香魚</h3>
-            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-            <a class="btn" href=""><i class="readmore"></i>Read More</a>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+
+        function goBack() {
+            window.history.back();
+        }
+        document.getElementById('scrollToTop').addEventListener('click', scrollToTop);
+        document.getElementById('goBack').addEventListener('click', goBack);
+    </script>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-item">
+                <h3>新聞 NEWS</h3>
+                <br>
+                <a class="smalltitle" href="#">
+                    <h2>熱門新聞 Hot News</h2>
+                    <h2>最新活動 Activity</h2>
+                    <h2>最新動態 Posting</h2>
+                </a>
+            </div>
+            <div class="footer-item">
+                <h3>關於 About
+                </h3>
+                <br>
+                <a class="smalltitle" href="#">
+                    <h2>關於我們 About Us</h2>
+                    <h2>免責聲明 Declaration</h2>
+                    <h2>服務條款 Serving Policy</h2>
+                    <h2>人才招募 Join Us</h2>
+                </a>
+
+
+            </div>
+            <div class="footer-item">
+                <h3>會員 Member</h3>
+                <br>
+                <a class="smalltitle" href="#">
+                    <h2>註冊 SignIn</h2>
+                    <h2>登入 LogIn</h2>
+                    <h2>帳戶資料 Account</h2>
+                    <h2>更多資訊 More Info</h2>
+                </a>
+
+            </div>
+            <div class="footer-item">
+                <h3>法律條款 LAW</h3>
+                <br>
+                <a class="smalltitle" href="#">
+                    <h2>隱私政策 Private Policy</h2>
+                    <h2>瀏覽紀錄政策 Cookies Policy</h2>
+                    <h2>銷售條款 Sales Policy</h2>
+
+                </a>
+            </div>
         </div>
-    </div>
-</div>
-<div class="article">
-    <div class="innerarticle">
-        <img class="bg-img" src="img/1.jpg">
-        <div class="innerarticletext">
-            <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">午仔魚</h3>
-            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-            <a class="btn" href=""><i class="readmore"></i>Read More</a>
-        </div>
-    </div>
-</div>
-<div class="article">
-    <div class="innerarticle">
-        
-        <img class="bg-img" src="img/1.jpg">
-        <div class="innerarticletext">
 
-            <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">白鯧</h3>
-            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-            <a class="btn" href=""><i class="readmore"></i>Read More</a>
-        </div>
-    </div>
-</div>
-<div class="article">
-    <div class="innerarticle">
-        
-        <img class="bg-img" src="img/1.jpg">
-        <div class="innerarticletext">
-
-            <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">土魠魚</h3>
-            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-            <a class="btn" href=""><i class="readmore"></i>Read More</a>
-        </div>
-    </div>
-</div>
-<div class="article">
-    <div class="innerarticle">
-        
-        <img class="bg-img" src="img/1.jpg">
-        <div class="innerarticletext">
-
-            <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">鱸魚</h3>
-            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-            <a class="btn" href=""><i class="readmore"></i>Read More</a>
-        </div>
-    </div>
-</div>
-<div class="article">
-    <div class="innerarticle">
-        
-        <img class="bg-img" src="img/1.jpg">
-        <div class="innerarticletext">
-
-            <img class="mb-4" src="img/2.jpg" alt="Icon">
-            <h3 class="mb-3">台灣鯛</h3>
-            <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-            <a class="btn" href=""><i class="readmore"></i>Read More</a>
-        </div>
-    </div>
-</div>
-</div>
-
-<div id="scrollToTop" class="scroll-to-top">Top
-</div>
-
-<div id="goBack" class="go-back">Pre
-</div>
-
-  <script>
-    function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-    }
-
-    
-    function goBack() {
-    window.history.back();
-    }
-    document.getElementById('scrollToTop').addEventListener('click', scrollToTop);
-    document.getElementById('goBack').addEventListener('click', goBack);
-</script>
-
-<footer>
-    <div class="footer-grid">
-        <div class="footer-item">
-            <h3>新聞 NEWS</h3>
-            <br>
-            <a class="smalltitle" href="#">
-            <h2>熱門新聞 Hot News</h2>
-            <h2>最新活動 Activity</h2>
-            <h2>最新動態 Posting</h2>
-        </a>
-        </div>
-        <div class="footer-item">
-            <h3>關於 About
-            </h3>
-            <br>
-            <a class="smalltitle" href="#">
-            <h2>關於我們 About Us</h2>
-            <h2>免責聲明 Declaration</h2>
-            <h2>服務條款 Serving Policy</h2>
-            <h2>人才招募 Join Us</h2>
-        </a>
-
-        
-        </div>
-        <div class="footer-item">
-            <h3>會員 Member</h3>
-            <br>
-            <a class="smalltitle" href="#">
-            <h2>註冊 SignIn</h2>
-            <h2>登入 LogIn</h2>
-            <h2>帳戶資料 Account</h2>
-            <h2>更多資訊 More Info</h2>
-        </a>
-        
-        </div>
-        <div class="footer-item">
-            <h3>法律條款 LAW</h3>
-            <br>
-            <a class="smalltitle" href="#">
-            <h2>隱私政策 Private Policy</h2>
-            <h2>瀏覽紀錄政策 Cookies Policy</h2>
-            <h2>銷售條款 Sales Policy</h2>
-
-        </a>
-        </div>
-    </div>
-        
         </div>
         <div class="copyright" style="font-size: 20px; font-family:'Open Sans', sans-serif;color: #b78d65 ;">
             © 2023 本網站為緯育TibaMe前端工程師班CHD103專題作品，本平台僅供學習、展示之用。
         </div>
-</footer>
+    </footer>
 
 </body>
 

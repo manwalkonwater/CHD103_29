@@ -5,26 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>會員登錄 Member</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="headerfooter.css">
 </head>
 <style>
     body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(20deg,lightyellow,#b78d65) fixed center center / 100% 100%;
+  background-image: url(/img/2.jpg);
+  background-size: cover;
 }
 
-.container {
-  background-color: #fff;
+/* .container {
+  background-color: rgba(150, 150, 150, .6);
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  
-}
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
 
 h1 {
   text-align: center;
@@ -63,14 +62,10 @@ background-color: #b78d65;
 
 
 button:hover {
- 
 background-color: black;
 color:#b78d65;
 }
 
-.container:hover{
-    background-color:#b78d65
-}
 
 #errorMessage {
   color:white;
@@ -107,9 +102,37 @@ background-color: #8c6843;
 </style>
 
 <body>
+  <nav>
+    <ul class="headerbar">
+        <li><a href="#"><img src="img/logo2.png" alt=""></a></li>
+        <li><a href="index.html">關於我們 <br><br> ABOUT US</a></li>
+        <li><a href="news.html">最新消息 <br><br>NEWS</a></li>
+        <li><a href="promoption.html">限時特惠 <br><br>PROMTION</a></li>
+        <li><a href="category.html">海鮮品項 <br><br>CATEGORY</a></li>
+        <li><a href="contactus.html">聯絡資訊 <br><br>CONTACT</a></li>
+        <li><a href="member.html">會員中心 <br><br>MEMBERS</a></li>
+    </ul>
+</nav>
+
+<div class="frontpageblackblock">
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="img/1.jpg" alt="">
+        </div>
+        <div class="slide fade">
+            <img src="img/2.jpg" alt="">
+        </div>
+        <div class="slide fade">
+            <img src="img/12.png" alt="">
+        </div>
+    </div>
+
+    <div class="categoryletter">
+        CATEGORY
+    </div>
+</div>
     
   <div class="container">
-    <img src="img/2.jpg" alt="">
     <h1>會員登錄</h1>
     <form id="loginForm">
       <label for="username">信箱：</label>
@@ -149,6 +172,80 @@ background-color: #8c6843;
   }
   document.getElementById('goBack').addEventListener('click', goBack);
 </script>
+<footer>
+  <div class="wheatbar">
+      <a href="#"><img src="img/logo2.png" alt=""></a>
+
+
+
+  </div>
+  <div class="footer-grid">
+
+      <div class="footer-item">
+          <h3>新聞 NEWS</h3>
+          <br>
+          <a class="smalltitle" href="#">
+              <h2>熱門新聞 Hot News</h2>
+              <h2>最新活動 Activity</h2>
+              <h2>最新動態 Posting</h2>
+          </a>
+      </div>
+      <div class="footer-item">
+          <h3>關於 About
+          </h3>
+          <br>
+          <a class="smalltitle" href="#">
+              <h2>關於我們 About Us</h2>
+              <h2>免責聲明 Declaration</h2>
+              <h2>服務條款 Service</h2>
+              <h2>人才招募 Join Us</h2>
+          </a>
+
+
+      </div>
+      <div class="footer-item">
+          <h3>會員 Member</h3>
+          <br>
+          <a class="smalltitle" href="#">
+              <h2>註冊 SignIn</h2>
+              <h2>登入 LogIn</h2>
+              <h2>帳戶資料 Account</h2>
+              <h2>更多資訊 More Info</h2>
+          </a>
+
+      </div>
+      <div class="footer-item">
+          <h3>法律條款 LAW</h3>
+          <br>
+          <a class="smalltitle" href="#">
+              <h2>隱私政策 Privacy</h2>
+              <h2>瀏覽紀錄政策 Cookies</h2>
+              <h2>銷售條款 Sales Policy</h2>
+
+          </a>
+      </div>
+
+  </div>
+
+  </div>
+  <div class="phone">
+      <a href="#"><img src="img/phone.png" alt="">(03) 4258183</a>
+      <a href="#"><img src="img/email.png" alt="">tibame.gmail.com</a>
+      <a href="#"><img src="img/address.png" alt="">320桃園市中壢區復興路46號9樓</a>
+      <a href="#"><img src="img/facebook.png" alt=""></a>
+      <a href="#"><img src="img/twitter.png" alt=""></a>
+      <a href="#"><img src="img/ig.png" alt=""></a>
+      <a href="#"><img src="img/line.png" alt=""></a>
+      <a href="#"><img src="img/youtube.png" alt=""></a>
+  </div>
+
+  <div class="seperator">
+  </div>
+  <div class="copyright" style="font-size: 20px; font-family:'Open Sans', sans-serif;color: #b78d65 ;">
+      © 2023 本網站為緯育TibaMe前端工程師班CHD103專題作品，本平台僅供學習、展示之用。
+  </div>
+
+</footer>
 
 </body>
 </html>
