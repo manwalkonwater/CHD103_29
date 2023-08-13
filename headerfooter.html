@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="reset.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="headerfooter.css"> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<head>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .articlecontent {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .mheaderbar {
+            display: none;
+        }
+
+        .headerbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            list-style: none;
+            background-color: black;
+            margin: 0;
+            bottom: 0;
+
+        }
+
+        .headerbar li {
+            flex: 1;
+            text-align: center;
+            line-height: 0.6;
+
+        }
+
+        .headerbar a {
+            color: #b78d65;
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+            padding: 24px 10px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 500;
+
+        }
+
+        .frontpageblackblock {
+            height: 500px;
+            width: 100%;
+            position: relative;
+            background-color: black;
+        }
+
+        #owl-demo .item {
+            padding: 30px 0px;
+            margin: 10px;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            width: 100%;
+            height: 380px;
+        }
+
+
+        .phone {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            left: 0;
+            bottom: 0;
+            justify-content: center;
+        }
+
+        .phone a {
+            text-decoration: none;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 500;
+            color: #b78d65;
+            align-items: center;
+            padding: 10px;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .phone :hover {
+            color: white;
+            transition: 0.5s;
+        }
+
+        .phone img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .socialmediaiconk {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+            right: 0;
+            bottom: 0;
+        }
+
+        .socialmediaiconk img {
+            width: 32px;
+            height: 32px;
+        }
+
+
+
+        .categoryletter {
+            font-size: 100px;
+            color: #b78d65;
+            position: relative;
+            left: 0;
+            bottom: 10px;
+            text-decoration: underline;
+            background-color: black;
+        }
+
+        .wrap .item {
+            background-color: #000000;
+            text-align: left;
+            display: flex;
+            margin: auto;
+        }
+
+        .wrap .item .txt {
+            position: flex;
+            display: inline-flex;
+            width: 50%;
+            color: #b78d65;
+            margin: auto;
+            padding: 20px;
+
+        }
+
+        .wrap .item .pic img {
+            width: 100%;
+            vertical-align: middle;
+            border-radius: 70%;
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+
+        .headerbar li a:hover {
+            color: white;
+            transition: 0.5s;
+
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 40px;
+            text-align: center;
+
+        }
+
+        footer h3 {
+            font-size: 20px;
+            font-family: 'Open Sans', sans-serif;
+            margin: auto;
+            display: flex;
+        }
+
+        footer h2 {
+            color: gray;
+            margin: 10px;
+            padding: 10px;
+            font-size: 18px;
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 100px;
+            letter-spacing: 1px;
+            padding: 15px;
+            height: 250px;
+        }
+
+
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        .smalltitle {
+            text-decoration: none;
+        }
+
+        .smalltitle :hover {
+            color: #b78d65;
+        }
+
+
+        .footer-grid,
+        .copyright {
+            color: white;
+        }
+
+        .article {
+            position: relative;
+            width: 100%
+        }
+
+        .seperator {
+            border-top: 1px solid gray;
+            display: block;
+            margin: 20px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .bar {
+            width: 30px;
+            height: 3px;
+            background-color: #b78d65;
+            margin: 3px 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .articlecontent {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .headerbar {
+                display: none;
+            }
+
+            .mheaderbar.mobile-menu-active {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: black;
+                z-index: 2;
+                transition: transform 0.3s ease;
+            }
+
+
+        .mheaderbar li {
+            flex: 1;
+            text-align: center;
+            line-height: 0.6;
+
+        }
+
+        .mheaderbar a {
+            color: #b78d65;
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+            padding: 24px 10px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 500;
+
+        }
+
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                /* Change to two columns */
+                grid-gap: 20px;
+                /* Adjust gap for better spacing */
+            }
+
+            .footer-item {
+                text-align: center;
+                margin-bottom: 20px;
+                padding: 10px;
+            }
+
+            .socialmediaiconk img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .phone,
+            .socialmediaiconk {
+                display: none;
+            }
+
+
+            .hamburger {
+                display: flex;
+            }
+
+            .seperator {
+                display: none;
+            }
+
+            .copyright {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 414px) {
+            .footer-grid {
+                grid-template-columns: repeat(1, 1fr);
+                /* One column for screens up to 414px */
+                grid-gap: 15px;
+                /* Adjust gap for better spacing */
+            }
+
+            /* ... additional styles specific to 414px ... */
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+      $(document).ready(function () {
+    const hamburger = $('#hamburger');
+    const mobileMenu = $('.mheaderbar');
+
+    hamburger.click(function () {
+        mobileMenu.toggleClass('mobile-menu-active');
+    });
+
+    // Hide mobile menu when clicking on a menu item
+    $('.mheaderbar a').click(function () {
+        mobileMenu.removeClass('mobile-menu-active');
+    });
+});
+    </script>
+    <nav>
+
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="headerbar">
+            <a href="#"><img src="img/logo2.png" alt=""></a>
+            <li><a href="index.html">關於我們 <br><br><br> ABOUT US</a></li>
+            <li><a href="news.html">最新消息 <br><br><br>NEWS</a></li>
+            <li><a href="promoption.html">限時特惠 <br><br><br>PROMTION</a></li>
+            <li><a href="categorytest.html">海鮮品項 <br><br><br>CATEGORY</a></li>
+            <li><a href="contactus.html">聯絡資訊 <br><br><br>CONTACT</a></li>
+            <li><a href="member.html">會員中心 <br><br><br>MEMBERS</a></li>
+        </ul>
+        <ul class="mheaderbar">
+            <a href="#"><img src="img/logo2.png" alt=""></a>
+            <li><a href="index.html">關於我們 <br><br><br> ABOUT US</a></li>
+            <li><a href="news.html">最新消息 <br><br><br>NEWS</a></li>
+            <li><a href="promoption.html">限時特惠 <br><br><br>PROMTION</a></li>
+            <li><a href="categorytest.html">海鮮品項 <br><br><br>CATEGORY</a></li>
+            <li><a href="contactus.html">聯絡資訊 <br><br><br>CONTACT</a></li>
+            <li><a href="member.html">會員中心 <br><br><br>MEMBERS</a></li>
+        </ul>
+    </nav>
+
+
+
+    <div id="owl-demo" class="owl-carousel owl-theme frontpageblackblock">
+
+
+        <div class="item">
+            <img src="img/2.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="img/12.png">
+        </div>
+        <div class="item">
+            <img src="img/2.jpg">
+
+        </div>
+        <div class="item">
+            <img src="img/12.png">
+
+        </div>
+        <div class="item">
+            <img src="img/2.jpg">
+
+        </div>
+        <div class="item">
+            <img src="img/12.png">
+
+        </div>
+
+
+    </div>
+
+    </div>
+    <div class="categoryletter">
+        ABOUT US
+    </div>
+
+    <script>
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            // autoplayHoverPause: true
+        });
+        $('.play').on('click', function () {
+            owl.trigger('play.owl.autoplay', [2000])
+        })
+        $('.stop').on('click', function () {
+            owl.trigger('stop.owl.autoplay')
+        })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#owl-demo").owlCarousel({
+                navigation: true
+            });
+
+        });
+    </script>
+
+
+
+    <footer>
+        <div class="wheatbar">
+            <a href="#"><img src="img/logo2.png" alt=""></a>
+        </div>
+        <div class="footer-grid">
+            <div class="footer-item">
+                <h3>新聞 NEWS</h3>
+                <a class="smalltitle" href="#">
+                    <h2>熱門新聞 Hot News</h2>
+                    <h2>最新活動 Activity</h2>
+                    <h2>最新動態 Posting</h2>
+                </a>
+            </div>
+            <div class="footer-item">
+                <h3>關於 About</h3>
+                <a class="smalltitle" href="#">
+                    <h2>關於我們 About Us</h2>
+                    <h2>免責聲明 Declaration</h2>
+                    <h2>服務條款 Service</h2>
+                </a>
+            </div>
+            <div class="footer-item">
+                <h3>會員 Member</h3>
+                <a class="smalltitle" href="#">
+                    <h2>註冊 SignIn</h2>
+                    <h2>登入 LogIn</h2>
+                    <h2>帳戶資料 Account</h2>
+                </a>
+            </div>
+            <div class="footer-item">
+                <h3>法律條款 LAW</h3>
+                <a class="smalltitle" href="#">
+                    <h2>隱私政策 Privacy</h2>
+                    <h2>瀏覽紀錄政策 Cookies</h2>
+                    <h2>銷售條款 Sales Policy</h2>
+                </a>
+            </div>
+        </div>
+        <div class="phone">
+            <a href="#"><img src="img/phone.png" alt="">(03) 4258183</a>
+            <a href="#"><img src="img/email.png" alt="">tibame.gmail.com</a>
+            <a href="#"><img src="img/address.png" alt="">320桃園市中壢區復興路46號9樓</a>
+        </div>
+        <div class="socialmediaiconk">
+            <a href="#"><img src="img/facebook.png" alt=""></a>
+            <a href="#"><img src="img/twitter.png" alt=""></a>
+            <a href="#"><img src="img/ig.png" alt=""></a>
+            <a href="#"><img src="img/line.png" alt=""></a>
+            <a href="#"><img src="img/youtube.png" alt=""></a>
+        </div>
+        <div class="seperator"></div>
+        <div class="copyright" style="font-size: 20px; font-family:'Open Sans', sans-serif;color: #b78d65 ;">
+            © 2023 本網站為緯育TibaMe前端工程師班CHD103專題作品，本平台僅供學習、展示之用。
+        </div>
+    </footer>
+</body>
+
+</html>
