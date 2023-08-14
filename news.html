@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="reset.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,17 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>最新消息 News</title>
     <style>
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
 
-        h1 {
-            text-align: center;
-        }
 
 
         .news-content-text {
@@ -90,35 +82,7 @@
             opacity: 1;
         }
 
-        .wrap .card {
-            background-color: #000000;
-            text-align: left;
-            display: flex;
-            margin: auto;
 
-        }
-
-        .wrap .card .txt {
-            position: flex;
-            display: inline-flex;
-            width: 50%;
-            color: #b78d65;
-            margin: auto;
-            padding: 20px;
-
-        }
-
-        .wrap .card .pic img {
-            width: 100%;
-            vertical-align: middle;
-            border-radius: 70%;
-            margin-bottom: 30px;
-            margin-top: 30px;
-        }
-
-        .wrap .mbcard {
-            display: none;
-        }
 
         @media screen and (max-width: 768px){
             .news-content-text img{
@@ -128,39 +92,12 @@
 
         }
 
-        @media screen and (max-width: 1200px) {
-            .wrap .card {
-                display: none;
-            }
-
-            .wrap .mbcard {
-                display: block;
-                border: white 0 0 2px 2px solid;
-            }
-
-            .wrap .mbcard .txt {
-                color: #b78d65;
-                margin: auto;
-                padding: 20px;
-            }
-
-            .wrap .mbcard .pic img {
-                width: 100%;
-                vertical-align: middle;
-                border-radius: 70%;
-                margin-bottom: 30px;
-                margin-top: 30px;
-            }
 
 
-
-
-        }
     </style>
 </head>
 
 <body>
-
     <script>
         $(document).ready(function () {
             const hamburger = $('#hamburger');
@@ -236,7 +173,7 @@
 
     </div>
     <div class="categoryletter">
-        News
+        ABOUT US
     </div>
 
     <script>
@@ -247,6 +184,7 @@
             margin: 10,
             autoplay: true,
             autoplayTimeout: 2000,
+            // autoplayHoverPause: true
         });
         $('.play').on('click', function () {
             owl.trigger('play.owl.autoplay', [2000])
@@ -265,6 +203,7 @@
 
         });
     </script>
+
 
 <div class="dropdown">
     <div class="dropdown-toggle">
@@ -324,82 +263,64 @@
     </div>
 </div>
 
-<script>
-    $(document).ready(function () {
-    const hamburger = $('#hamburger');
-    const mobileMenu = $('.mheaderbar');
-    const dropdown = $('.dropdown');
 
-    hamburger.click(function () {
-        mobileMenu.toggleClass('mobile-menu-active');
-    });
-
-    $('.mheaderbar a').click(function () {
-        mobileMenu.removeClass('mobile-menu-active');
-    });
-
-    dropdown.click(function () {
-        $(this).toggleClass('active');
-    });
-});
-</script>
     
 
-    <footer>
-        <div class="wheatbar">
-            <a href="#"><img src="img/logo2.png" alt=""></a>
+<footer>
+    <div class="wheatbar">
+        <a href="#"><img src="img/logo2.png" alt=""></a>
+    </div>
+    <div class="footer-grid">
+        <div class="footer-item">
+            <h3>新聞 NEWS</h3>
+            <a class="smalltitle" href="#">
+                <h2>熱門新聞 <br>Hot News</h2>
+                <h2>最新活動 <br>Activity</h2>
+                <h2>最新動態 <br>Posting</h2>
+            </a>
         </div>
-        <div class="footer-grid">
-            <div class="footer-item">
-                <h3>新聞 NEWS</h3>
-                <a class="smalltitle" href="#">
-                    <h2>熱門新聞 <br>Hot News</h2>
-                    <h2>最新活動 <br>Activity</h2>
-                    <h2>最新動態 <br>Posting</h2>
-                </a>
-            </div>
-            <div class="footer-item">
-                <h3>關於 About</h3>
-                <a class="smalltitle" href="#">
-                    <h2>關於我們 <br>About Us</h2>
-                    <h2>免責聲明 <br>Declaration</h2>
-                    <h2>服務條款 <br>Service</h2>
-                </a>
-            </div>
-            <div class="footer-item">
-                <h3>會員 Member</h3>
-                <a class="smalltitle" href="#">
-                    <h2>註冊 <br>SignIn</h2>
-                    <h2>登入 <br>LogIn</h2>
-                    <h2>帳戶資料 <br>Account</h2>
-                </a>
-            </div>
-            <div class="footer-item">
-                <h3>法律條款 LAW</h3>
-                <a class="smalltitle" href="#">
-                    <h2>隱私政策 <br>Privacy</h2>
-                    <h2>瀏覽紀錄政策 <br>Cookies</h2>
-                    <h2>銷售條款 <br>Sales Policy</h2>
-                </a>
-            </div>
+        <div class="footer-item">
+            <h3>關於 About</h3>
+            <a class="smalltitle" href="#">
+                <h2>關於我們 <br>About Us</h2>
+                <h2>免責聲明 <br>Declaration</h2>
+                <h2>服務條款 <br>Service</h2>
+            </a>
         </div>
-        <div class="phone">
-            <a href="#"><img src="img/phone.png" alt="">(03) 4258183</a>
-            <a href="#"><img src="img/email.png" alt="">tibame.gmail.com</a>
-            <a href="#"><img src="img/address.png" alt="">320桃園市中壢區復興路46號9樓</a>
+        <div class="footer-item">
+            <h3>會員 Member</h3>
+            <a class="smalltitle" href="#">
+                <h2>註冊 <br>SignIn</h2>
+                <h2>登入 <br>LogIn</h2>
+                <h2>帳戶資料 <br>Account</h2>
+            </a>
         </div>
-        <div class="socialmediaiconk">
-            <a href="#"><img src="img/facebook.png" alt=""></a>
-            <a href="#"><img src="img/twitter.png" alt=""></a>
-            <a href="#"><img src="img/ig.png" alt=""></a>
-            <a href="#"><img src="img/line.png" alt=""></a>
-            <a href="#"><img src="img/youtube.png" alt=""></a>
+        <div class="footer-item">
+            <h3>法律條款 LAW</h3>
+            <a class="smalltitle" href="#">
+                <h2>隱私政策 <br>Privacy</h2>
+                <h2>瀏覽紀錄政策 <br>Cookies</h2>
+                <h2>銷售條款 <br>Sales Policy</h2>
+            </a>
         </div>
-        <div class="seperator"></div>
-        <div class="copyright" style="font-size: 20px; font-family:'Open Sans', sans-serif;color: #b78d65 ;">
-            © 2023 本網站為緯育TibaMe前端工程師班CHD103專題作品，本平台僅供學習、展示之用。
-        </div>
-    </footer>
+    </div>
+    <div class="phone">
+        <a href="#"><img src="img/phone.png" alt="">(03) 4258183</a>
+        <a href="#"><img src="img/email.png" alt="">tibame.gmail.com</a>
+        <a href="#"><img src="img/address.png" alt="">320桃園市中壢區復興路46號9樓</a>
+    </div>
+    <div class="socialmediaiconk">
+        <a href="#"><img src="img/facebook.png" alt=""></a>
+        <a href="#"><img src="img/twitter.png" alt=""></a>
+        <a href="#"><img src="img/ig.png" alt=""></a>
+        <a href="#"><img src="img/line.png" alt=""></a>
+        <a href="#"><img src="img/youtube.png" alt=""></a>
+    </div>
+    <div class="seperator"></div>
+    <div class="copyright" style="font-size: 20px; font-family:'Open Sans', sans-serif;color: #b78d65 ;">
+        © 2023 本網站為緯育TibaMe前端工程師班CHD103專題作品，本平台僅供學習、展示之用。
+    </div>
+</footer>
 </body>
 
 </html>
