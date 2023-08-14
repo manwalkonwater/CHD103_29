@@ -1,257 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="reset.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="headerfooter.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>最新消息 News</title>
     <style>
-
-        
-
-.headerbar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            list-style: none;
-            background-color: black;
-            margin: 0;
-            bottom: 0;
-
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
-        .headerbar li {
-            flex: 1;
+        h1 {
             text-align: center;
-            line-height: 0.6;
-
         }
 
-        .headerbar a {
-            color: #b78d65;
-            text-decoration: none;
-            font-size: 16x;
-            display: block;
-            padding: 24px 10px;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 500;
 
-        }
-
-        .frontpageblackblock {
-            height: 500px;
-            width: 100%;
-            position: relative;
-            background-color: black;
-        }
-
-        .slideshow-container {
-            max-width: 100%;
-            position: relative;
+        .news-content-text {
+            max-height: 0;
             overflow: hidden;
-            height: 500px;
-    
+            opacity: 0;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            transform-origin: top;
+            transform: scaleY(0);
+            font-size: 30px;
+            display: block;
+            padding: 60px;
+            background: linear-gradient(20deg, lightyellow, #b78d65) fixed center center / 100% 100%;
         }
 
-        .slide {
-            display: none;
-            position: absolute;
-            width: 100%;
-            height: 500px;
-
-        }
-
-        img {
-            object-fit: cover;
-        }
-
-        .phone {
-            display: flex;
-            gap: 10px;
-            padding: 10px;
-            align-items: center;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-        }
-        .phone a{
-            text-decoration: none;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 500;
-            color: #b78d65;
-            align-items: center;
-            padding: 10px;
-            display: flex;
-        }
-
-        .phone :hover{
-            color: white;
-            transition: 0.5s;
-            background-color: #b78d65;
-        }
-
-        .phone img {
-            width: 32px;
-            height: 32px;
-        }
-
-        .socialmediaiconk {
-            display: flex;
-            gap: 10px;
-            padding: 10px;
-            align-items: center;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-        }
-
-        .socialmediaiconk img {
-            width: 50px;
-            height: 50px;
-        }
-
-
-
-        .categoryletter {
-            font-size: 100px;
-            color: #b78d65;
-            position: absolute;
-            left: 0;
-            bottom: 10px;
-            text-decoration: underline;
-
-
-
-        }
-
-        .frontpage .image {
-            width: 100px;
-            height: 100px;
-        }
-
-        .headerbar a:hover {
-            color: white;
-            transition: 0.5s;
-            background-color: #b78d65;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-
-        footer h3{
-            font-size: 20px;
-            font-family: 'Open Sans', sans-serif;
-            margin: auto;
-        }
-        footer h2{
+        .news-content .news-title {
+            background-color: wheat;
             color: gray;
-            margin:10px;
-            padding: 10px;
-            font-size: 20px;
             font-family: 'Open Sans', sans-serif;
-
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 100px;
-            letter-spacing: 1px;
-            padding: 15px;
-            height: 350px;
-        }
-
-        .footer-item {
-            padding: 10px;
-        }
-
-        h3 {
-            margin-bottom: 10px;
-        }
-
-        .smalltitle{
-            text-decoration: none;
-        }
-
-        .smalltitle :hover{
-            color:#b78d65;
-        }
-
-
-        .footer-grid,
-        .copyright {
-            color: white;
-        }
-        .article {
-            position: relative;
-            width: 100%
-        }
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-h1 {
-    text-align: center;
-}
-
-
-.news-content-text {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-    transform-origin: top; 
-    transform: scaleY(0); 
-    font-size: 40px;
-    display: block;
-    padding: 60px;
-    background: linear-gradient(20deg,lightyellow,#b78d65) fixed center center / 100% 100%;
-}
-
-        .news-content .news-title{
-            background-color:wheat;
-            color:gray;
-            font-family: 'Open Sans', sans-serif ;
             font-size: 50px;
             padding: 100px;
 
-}
+        }
 
-.news-content .news-date{
-    font-size: 40px;
-    color: black;
-    background-color:#b78d65;
-    padding: 0px;
-}
-.news-content:hover .news-title,
-.news-content .news-title:hover {
-    background-color: black;
-    color: #b78d65;
-    transition: 0.3s;
-}
+        .news-content .news-date {
+            font-size: 40px;
+            color: black;
+            background-color: #b78d65;
+            padding: 0px;
+        }
 
-.news-content .news-date:hover{
-    background-color:#b78d65;
-    color:black
-}
+        .news-content:hover .news-title,
+        .news-content .news-title:hover {
+            background-color: black;
+            color: #b78d65;
+            transition: 0.3s;
+        }
+
+        .news-content .news-date:hover {
+            background-color: #b78d65;
+            color: black
+        }
+
         .news-item:hover .news-content-text {
             max-height: 2000px;
             opacity: 1;
-            transform: scaleY(1); 
+            transform: scaleY(1);
         }
 
         .news-item .news-content-text {
@@ -266,20 +90,304 @@ h1 {
             opacity: 1;
         }
 
+        .wrap .card {
+            background-color: #000000;
+            text-align: left;
+            display: flex;
+            margin: auto;
+
+        }
+
+        .wrap .card .txt {
+            position: flex;
+            display: inline-flex;
+            width: 50%;
+            color: #b78d65;
+            margin: auto;
+            padding: 20px;
+
+        }
+
+        .wrap .card .pic img {
+            width: 100%;
+            vertical-align: middle;
+            border-radius: 70%;
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+
+        .wrap .mbcard {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px){
+            .news-content-text img{
+                width: 50%;
+            }
+
+
+        }
+
+        @media screen and (max-width: 1200px) {
+            .wrap .card {
+                display: none;
+            }
+
+            .wrap .mbcard {
+                display: block;
+                border: white 0 0 2px 2px solid;
+            }
+
+            .wrap .mbcard .txt {
+                color: #b78d65;
+                margin: auto;
+                padding: 20px;
+            }
+
+            .wrap .mbcard .pic img {
+                width: 100%;
+                vertical-align: middle;
+                border-radius: 70%;
+                margin-bottom: 30px;
+                margin-top: 30px;
+            }
+
+
+
+
+        }
     </style>
 </head>
-<body>
-    
-    <!-- <div class="headerwheatbar">
 
+<body>
+
+    <script>
+        $(document).ready(function () {
+            const hamburger = $('#hamburger');
+            const mobileMenu = $('.mheaderbar');
+
+            hamburger.click(function () {
+                mobileMenu.toggleClass('mobile-menu-active');
+            });
+
+            $('.mheaderbar a').click(function () {
+                mobileMenu.removeClass('mobile-menu-active');
+            });
+        });
+    </script>
+    <nav>
+
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="headerbar">
+            <a href="#"><img src="img/logo2.png" alt=""></a>
+            <li><a href="index.html">關於我們 <br><br><br> ABOUT US</a></li>
+            <li><a href="news.html">最新消息 <br><br><br>NEWS</a></li>
+            <li><a href="promoption.html">限時特惠 <br><br><br>PROMTION</a></li>
+            <li><a href="category.html">海鮮品項 <br><br><br>CATEGORY</a></li>
+            <li><a href="contactus.html">聯絡資訊 <br><br><br>CONTACT</a></li>
+            <li><a href="member.html">會員中心 <br><br><br>MEMBERS</a></li>
+        </ul>
+        <ul class="mheaderbar">
+            <a href="#"><img src="img/logo2.png" alt=""></a>
+            <li><a href="index.html">關於我們 <br><br><br> ABOUT US</a></li>
+            <li><a href="news.html">最新消息 <br><br><br>NEWS</a></li>
+            <li><a href="promoption.html">限時特惠 <br><br><br>PROMTION</a></li>
+            <li><a href="category.html">海鮮品項 <br><br><br>CATEGORY</a></li>
+            <li><a href="contactus.html">聯絡資訊 <br><br><br>CONTACT</a></li>
+            <li><a href="member.html">會員中心 <br><br><br>MEMBERS</a></li>
+        </ul>
+    </nav>
+
+
+
+
+    <div id="owl-demo" class="owl-carousel owl-theme frontpageblackblock">
+
+
+        <div class="item">
+            <img src="img/2.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="img/12.png">
+        </div>
+        <div class="item">
+            <img src="img/2.jpg">
+
+        </div>
+        <div class="item">
+            <img src="img/12.png">
+
+        </div>
+        <div class="item">
+            <img src="img/2.jpg">
+
+        </div>
+        <div class="item">
+            <img src="img/12.png">
+
+        </div>
+
+
+    </div>
+
+    </div>
+    <div class="categoryletter">
+        News
+    </div>
+
+    <script>
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 2000,
+        });
+        $('.play').on('click', function () {
+            owl.trigger('play.owl.autoplay', [2000])
+        })
+        $('.stop').on('click', function () {
+            owl.trigger('stop.owl.autoplay')
+        })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#owl-demo").owlCarousel({
+                navigation: true
+            });
+
+        });
+    </script>
+
+<div class="dropdown">
+    <div class="dropdown-toggle">
+        <span class="dropdown-title">Dropdown Title</span>
+        <span class="dropdown-date">Date</span>
+    </div>
+    <div class="dropdown-content">
+        <!-- Content to be revealed -->
+        <div class="news-item">
+            <div class="news-content">
+                <div class="news-title">高市府偕高科大辦理智慧養殖管理課程</div>
+                <div class="news-date">2023年8月13日</div>
+                <div class="news-content-text">
+                    為升級漁民養殖新觀念，高雄市政府海洋局攜手國立高雄科技大學在永安區漁會辦理水產養殖經營講習會，並結合漁業署委託中華民國養殖漁業發展協會推動補助養殖漁業省工機械化及設備方案，教導漁民應用智能設備蒐集各項生物環境參數，以監控養殖池水質及達到事前預警，增加應變時間，減少損失，提高養殖預警防災效率。
+海洋局表示，為強化漁民養殖新觀念，自今年6月起辦理一系列養殖經營管理技術講習課程，第一場次於彌陀區漁會講授友善節能養殖技術，並結合漁業署推動補助具變頻節能效益的增氧機、發電機及鼓風機等小型漁機具設備補助方案，教導漁民如何實際應用在養殖管理上，第二場於林園區漁會辦理，邀請財團法人資訊工業策進會數位轉型研究院分享科技養殖新觀念，第三場(本次)係聚焦在智慧養殖。
+<br><img src="img/2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="news-item">
+            <div class="news-content">
+                <div class="news-title">News Title</div>
+                <div class="news-date">Date</div>
+                <div class="news-content-text">
+                    <!-- More content here -->
+                </div>
+            </div>
+        </div>
+        <div class="news-item">
+            <div class="news-content">
+                <div class="news-title">News Title</div>
+                <div class="news-date">Date</div>
+                <div class="news-content-text">
+                    <!-- More content here -->
+                </div>
+            </div>
+        </div>
+        <div class="news-item">
+            <div class="news-content">
+                <div class="news-title">News Title</div>
+                <div class="news-date">Date</div>
+                <div class="news-content-text">
+                    <!-- More content here -->
+                </div>
+            </div>
+        </div>
+        <div class="news-item">
+            <div class="news-content">
+                <div class="news-title">News Title</div>
+                <div class="news-date">Date</div>
+                <div class="news-content-text">
+                    <!-- More content here -->
+                </div>
+            </div>
+        </div>
+        <!-- Repeat similar structure for other items -->
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+    const hamburger = $('#hamburger');
+    const mobileMenu = $('.mheaderbar');
+    const dropdown = $('.dropdown');
+
+    hamburger.click(function () {
+        mobileMenu.toggleClass('mobile-menu-active');
+    });
+
+    $('.mheaderbar a').click(function () {
+        mobileMenu.removeClass('mobile-menu-active');
+    });
+
+    dropdown.click(function () {
+        $(this).toggleClass('active');
+    });
+});
+</script>
+    
+
+    <footer>
+        <div class="wheatbar">
+            <a href="#"><img src="img/logo2.png" alt=""></a>
+        </div>
+        <div class="footer-grid">
+            <div class="footer-item">
+                <h3>新聞 NEWS</h3>
+                <a class="smalltitle" href="#">
+                    <h2>熱門新聞 <br>Hot News</h2>
+                    <h2>最新活動 <br>Activity</h2>
+                    <h2>最新動態 <br>Posting</h2>
+                </a>
+            </div>
+            <div class="footer-item">
+                <h3>關於 About</h3>
+                <a class="smalltitle" href="#">
+                    <h2>關於我們 <br>About Us</h2>
+                    <h2>免責聲明 <br>Declaration</h2>
+                    <h2>服務條款 <br>Service</h2>
+                </a>
+            </div>
+            <div class="footer-item">
+                <h3>會員 Member</h3>
+                <a class="smalltitle" href="#">
+                    <h2>註冊 <br>SignIn</h2>
+                    <h2>登入 <br>LogIn</h2>
+                    <h2>帳戶資料 <br>Account</h2>
+                </a>
+            </div>
+            <div class="footer-item">
+                <h3>法律條款 LAW</h3>
+                <a class="smalltitle" href="#">
+                    <h2>隱私政策 <br>Privacy</h2>
+                    <h2>瀏覽紀錄政策 <br>Cookies</h2>
+                    <h2>銷售條款 <br>Sales Policy</h2>
+                </a>
+            </div>
+        </div>
         <div class="phone">
             <a href="#"><img src="img/phone.png" alt="">(03) 4258183</a>
             <a href="#"><img src="img/email.png" alt="">tibame.gmail.com</a>
             <a href="#"><img src="img/address.png" alt="">320桃園市中壢區復興路46號9樓</a>
         </div>
-
-
-
         <div class="socialmediaiconk">
             <a href="#"><img src="img/facebook.png" alt=""></a>
             <a href="#"><img src="img/twitter.png" alt=""></a>
@@ -287,263 +395,11 @@ h1 {
             <a href="#"><img src="img/line.png" alt=""></a>
             <a href="#"><img src="img/youtube.png" alt=""></a>
         </div>
-    </div> -->
-</header>
-
-<nav>
-    <ul class="headerbar">
-        <a href="#"><img src="img/logo2.png" alt=""></a>
-        <li><a href="index.html">關於我們 <br><br> ABOUT US</a></li>
-        <li><a href="news.html">最新消息 <br><br>NEWS</a></li>
-        <li><a href="promoption.html">限時特惠 <br><br>PROMTION</a></li>
-        <li><a href="category.html">海鮮品項 <br><br>CATEGORY</a></li>
-        <li><a href="contactus.html">聯絡資訊 <br><br>CONTACT</a></li>
-        <li><a href="member.html">會員中心 <br><br>MEMBERS</a></li>
-    </ul>
-</nav>
-
-<div class="frontpageblackblock">
-    <div class="slideshow-container">
-        <div class="slide fade">
-            <img src="img/1.jpg" alt="">
-        </div>
-        <div class="slide fade">
-            <img src="img/2.jpg" alt="">
-        </div>
-        <div class="slide fade">
-            <img src="img/12.png" alt="">
-        </div>
-    </div>
-
-    <div class="categoryletter">
-        NEWS
-    </div>
-</div>
-
-<script>
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        let slides = document.getElementsByClassName("slide");
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1;
-        }
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 3000); 
-    }
-</script>
-<div class="news-list" id="newsList">
-    <div class="news-item">
-        <div class="news-content">
-            <div class="news-title">持續輔導臺灣鯛精進生產穩定外銷市場</div>
-            <div class="news-date">2023-07-23</div>
-            <div class="news-image"><img src="img/1.jpg" alt="圖片"></div>
-            <div class="news-content-text">
-漁業署表示，臺灣鯛年產約6萬5千公噸，內外銷占比各半，其比例並會視國內外市場情況而調整變動。109年起新冠肺炎疫情衝擊我國養殖水產品國際市場，政府持續推動相關獎勵拓銷措施並強化從源頭衛生安全及提升冷鏈加工量能，目前魚價較3年平均價增加5.2元/公斤(+11.8％)，高單價臺灣鯛切片112年上半年出口呈現量值均增加情勢，111年切片出口量2,025.1公噸較110及109年分別增加220.8公噸(+12.24％)及525公噸(+35.02％)。
-
-<br>漁業署指出，經調查 112年7月16日止國內臺灣鯛放養2,757公頃，較111年一整年減少27.8%，主要因上半年降雨量減少，約260公頃因水源不足而整池中；另臺灣鯛養殖門檻相對其他物種低，漁民會因內外銷價格變化、養殖環境及生產技術，動態調整養殖物種及數量。以110-111年為例，臺灣鯛111年放養面積3,814公頃，110年放養面積約3,792公頃，放養面積增加22公頃。
-
-<br>針對有報導稱光電入侵魚塭造成產量下降，漁業署表示，經查110年放養臺灣鯛但111年轉養其餘物種及休養的魚塭中，因漁電施工中暫時停養僅52公頃（1.37%），漁電共生並非外界認為導致臺灣鯛養殖面積減少主因。此外，因環境變動或市場價格，漁民可能在未來或下半年可能增加放養量，消費者不必擔心供應問題。
-
-<br>漁業署強調，養殖業者易受國內外市場價格等因素，採改養、輪休養等措施調整放養物種及經營型態。為提升國際水產品市場競爭力，漁業署將賡續輔導業者落實生產管理並投入相關冷鏈建設，進一步提升加工量能與品質，生產更多符合國際市場產品。
-            </div>
-        </div>
-    </div>
-
-
-    <div class="news-item">
-        <div class="news-content">
-
-            <div class="news-title">我駐泰國臺北經濟文化辦事處與泰國貿易經濟辦事處簽署漁業合作執行協議</div>
-            <div class="news-date">2023-07-24</div>
-            <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
-            <div class="news-content-text">
-為在國際間共同打擊非法漁業及強化漁業交流，我駐泰國臺北經濟文化辦事處與泰國貿易經濟辦事處分別由莊碩漢大使以及曾德榮代表於112年6月21日在臺灣完成「臺泰漁業合作執行協議」簽署，漁業署張致盛署長及泰國漁業廳副廳長Dr. Taworn Thunjai一同見證。
-
-<br><br>
-
-漁業署指出，泰國為我國遠洋漁船漁獲卸魚指定港口之一，臺泰雙方基於打擊非法、未報告及不受規範（Illegal, unreported and unregulated, IUU）捕魚行為之共識，臺泰雙方自105年開始討論在「臺泰農業合作協定」架構下簽署漁業合作安排，經過雙方長期諮商及交流，臺泰雙方終就漁業合作協議內容達成共識並完成簽署，代表臺泰雙方持續就打擊非法漁業進行合作及強化漁業交流之決心。
-
-<br><br>
-
-漁業署表示，臺泰雙方漁業主管機關多年來即持續就港口檢查、漁業證明書核發資料交換等進行合作，例如泰國持續提供該國港口卸魚檢查資料，供我方核發輸歐盟漁獲證明書之用，協助我國漁船漁獲輸銷歐盟，另泰國也與我國就漁船港口檢查進行合作，以及就進港漁船相關資訊建立即時資訊交換分享機制，有效共同打擊非法漁業，此次「臺泰漁業合作執行協議」完成簽署後，雙方並將在該協議架構下成立共同工作小組，持續就漁業相關議題之交流進行合作。
-
-<br><br>
-
-漁業署強調，我國為善盡市場國及遠洋漁業船旗國之責任，與國際合作共同打擊IUU漁業行為，將與包含泰國在內之相關國家持續合作，以促進海洋漁業資源永續利用。
-            </div>
-        </div>
-    </div>
-</div>
-
-
- <div class="news-item">
-    <div class="news-content">
-        <div class="news-title">標題2</div>
-        <div class="news-date">2023-07-24</div>
-        <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
-        <div class="news-content-text">
-            內文2... 
-        </div>
-    </div>
-</div>
-</div>
-
- <div class="news-item">
-    <div class="news-content">
-        <div class="news-title">標題2</div>
-        <div class="news-date">2023-07-24</div>
-        <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
-        <div class="news-content-text">
-            內文2... 
-        </div>
-    </div>
-</div>
-</div>
-
-<div class="news-item">
-    <div class="news-content">
-        <div class="news-title">標題2</div>
-        <div class="news-date">2023-07-24</div>
-        <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
-        <div class="news-content-text">
-            內文2... 
-        </div>
-    </div>
-</div>
-</div>
-
- <div class="news-item">
-    <div class="news-content">
-        <div class="news-title">標題2</div>
-        <div class="news-date">2023-07-24</div>
-        <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
-        <div class="news-content-text">
-            內文2...
-        </div>
-    </div>
-</div>
-</div>
-
- <div class="news-item">
-    <div class="news-content">
-        <div class="news-title">標題2</div>
-        <div class="news-date">2023-07-24</div>
-        <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
-        <div class="news-content-text">
-            內文2...
-        </div>
-    </div>
-</div>
-</div>
-
-<div class="news-item">
-    <div class="news-content">
-        <div class="news-title">標題2</div>
-        <div class="news-date">2023-07-24</div>
-        <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
-        <div class="news-content-text">
-            內文2...
-        </div>
-    </div>
-</div>
-</div>
-
-<div class="news-item">
-    <div class="news-content">
-        <div class="news-title">標題2</div>
-        <div class="news-date">2023-07-24</div>
-        <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
-        <div class="news-content-text">
-            內文2...
-        </div>
-    </div>
-</div>
-</div>
-
-
-<div class="news-item">
-    <div class="news-content">
-        <div class="news-title">標題2</div>
-        <div class="news-date">2023-07-24</div>
-        <div class="news-image"><img src="img/2.jpg" alt="圖片"></div>
-        <div class="news-content-text">
-            內文2...
-        </div>
-    </div>
-</div>
-</div>
-
-<script>
-    function toggleNewsContent(newsItem) {
-        newsItem.classList.toggle('expanded');
-    }
-
-    // Add event listeners to handle click effect for each news wrapper
-    const newsWrappers = document.querySelectorAll('.news-item');
-    newsWrappers.forEach((wrapper) => {
-        wrapper.addEventListener('click', () => toggleNewsContent(wrapper));
-    });
-</script>
-
-
-
-<footer>
-    <div class="footer-grid">
-        <div class="footer-item">
-            <h3>新聞 NEWS</h3>
-            <br>
-            <a class="smalltitle" href="#">
-            <h2>熱門新聞 Hot News</h2>
-            <h2>最新活動 Activity</h2>
-            <h2>最新動態 Posting</h2>
-        </a>
-        </div>
-        <div class="footer-item">
-            <h3>關於 About
-            </h3>
-            <br>
-            <a class="smalltitle" href="#">
-            <h2>關於我們 About Us</h2>
-            <h2>免責聲明 Declaration</h2>
-            <h2>服務條款 Serving Policy</h2>
-            <h2>人才招募 Join Us</h2>
-        </a>
-
-        
-        </div>
-        <div class="footer-item">
-            <h3>會員 Member</h3>
-            <br>
-            <a class="smalltitle" href="#">
-            <h2>註冊 SignIn</h2>
-            <h2>登入 LogIn</h2>
-            <h2>帳戶資料 Account</h2>
-            <h2>更多資訊 More Info</h2>
-        </a>
-        
-        </div>
-        <div class="footer-item">
-            <h3>法律條款 LAW</h3>
-            <br>
-            <a class="smalltitle" href="#">
-            <h2>隱私政策 Private Policy</h2>
-            <h2>瀏覽紀錄政策 Cookies Policy</h2>
-            <h2>銷售條款 Sales Policy</h2>
-
-        </a>
-        </div>
-    </div>
-        
-        </div>
+        <div class="seperator"></div>
         <div class="copyright" style="font-size: 20px; font-family:'Open Sans', sans-serif;color: #b78d65 ;">
             © 2023 本網站為緯育TibaMe前端工程師班CHD103專題作品，本平台僅供學習、展示之用。
         </div>
-</footer>
+    </footer>
 </body>
+
 </html>

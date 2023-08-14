@@ -6,7 +6,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-<!-- <link rel="stylesheet" href="headerfooter.css"> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -62,7 +61,7 @@
             text-decoration: none;
             font-size: 20px;
             display: block;
-            padding: 24px 10px;
+            padding: 24px 5px;
             font-family: 'Open Sans', sans-serif;
             font-weight: 500;
 
@@ -187,7 +186,7 @@
             font-size: 20px;
             font-family: 'Open Sans', sans-serif;
             margin: auto;
-            display: flex;
+            align-items: center;
         }
 
         footer h2 {
@@ -196,17 +195,17 @@
             padding: 10px;
             font-size: 18px;
             font-family: 'Open Sans', sans-serif;
-            display: flex;
+            align-items: center;
 
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-gap: 100px;
             letter-spacing: 1px;
             padding: 15px;
             height: 250px;
+            margin: 10px;
         }
 
 
@@ -278,31 +277,33 @@
                 transition: transform 0.3s ease;
             }
 
+            .mheaderbar {
+                background-color: white;
+            }
 
-        .mheaderbar li {
-            flex: 1;
-            text-align: center;
-            line-height: 0.6;
 
-        }
+            .mheaderbar li {
+                flex: 1;
+                text-align: center;
+                line-height: 0.6;
 
-        .mheaderbar a {
-            color: #b78d65;
-            text-decoration: none;
-            font-size: 20px;
-            display: block;
-            padding: 24px 10px;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 500;
+            }
 
-        }
+            .mheaderbar a {
+                color: #b78d65;
+                text-decoration: none;
+                font-size: 20px;
+                display: block;
+                padding: 24px 10px;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 500;
+
+            }
 
 
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
-                /* Change to two columns */
                 grid-gap: 20px;
-                /* Adjust gap for better spacing */
             }
 
             .footer-item {
@@ -338,12 +339,9 @@
         @media screen and (max-width: 414px) {
             .footer-grid {
                 grid-template-columns: repeat(1, 1fr);
-                /* One column for screens up to 414px */
                 grid-gap: 15px;
-                /* Adjust gap for better spacing */
             }
 
-            /* ... additional styles specific to 414px ... */
         }
     </style>
 
@@ -351,19 +349,18 @@
 
 <body>
     <script>
-      $(document).ready(function () {
-    const hamburger = $('#hamburger');
-    const mobileMenu = $('.mheaderbar');
+        $(document).ready(function () {
+            const hamburger = $('#hamburger');
+            const mobileMenu = $('.mheaderbar');
 
-    hamburger.click(function () {
-        mobileMenu.toggleClass('mobile-menu-active');
-    });
+            hamburger.click(function () {
+                mobileMenu.toggleClass('mobile-menu-active');
+            });
 
-    // Hide mobile menu when clicking on a menu item
-    $('.mheaderbar a').click(function () {
-        mobileMenu.removeClass('mobile-menu-active');
-    });
-});
+            $('.mheaderbar a').click(function () {
+                mobileMenu.removeClass('mobile-menu-active');
+            });
+        });
     </script>
     <nav>
 
@@ -466,33 +463,33 @@
             <div class="footer-item">
                 <h3>新聞 NEWS</h3>
                 <a class="smalltitle" href="#">
-                    <h2>熱門新聞 Hot News</h2>
-                    <h2>最新活動 Activity</h2>
-                    <h2>最新動態 Posting</h2>
+                    <h2>熱門新聞 <br>Hot News</h2>
+                    <h2>最新活動 <br>Activity</h2>
+                    <h2>最新動態 <br>Posting</h2>
                 </a>
             </div>
             <div class="footer-item">
                 <h3>關於 About</h3>
                 <a class="smalltitle" href="#">
-                    <h2>關於我們 About Us</h2>
-                    <h2>免責聲明 Declaration</h2>
-                    <h2>服務條款 Service</h2>
+                    <h2>關於我們 <br>About Us</h2>
+                    <h2>免責聲明 <br>Declaration</h2>
+                    <h2>服務條款 <br>Service</h2>
                 </a>
             </div>
             <div class="footer-item">
                 <h3>會員 Member</h3>
                 <a class="smalltitle" href="#">
-                    <h2>註冊 SignIn</h2>
-                    <h2>登入 LogIn</h2>
-                    <h2>帳戶資料 Account</h2>
+                    <h2>註冊 <br>SignIn</h2>
+                    <h2>登入 <br>LogIn</h2>
+                    <h2>帳戶資料 <br>Account</h2>
                 </a>
             </div>
             <div class="footer-item">
                 <h3>法律條款 LAW</h3>
                 <a class="smalltitle" href="#">
-                    <h2>隱私政策 Privacy</h2>
-                    <h2>瀏覽紀錄政策 Cookies</h2>
-                    <h2>銷售條款 Sales Policy</h2>
+                    <h2>隱私政策 <br>Privacy</h2>
+                    <h2>瀏覽紀錄政策 <br>Cookies</h2>
+                    <h2>銷售條款 <br>Sales Policy</h2>
                 </a>
             </div>
         </div>

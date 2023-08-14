@@ -4,373 +4,315 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="headerfooter.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>海鮮品項 Category</title>
     <style>
-        .articlecontent {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 20px;
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            line-height: 1.5em;
+            letter-spacing: 0.1em;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
         }
 
-        .mb-4 {
-            position: relative;
-            z-index: 1;
-            transition: transform 0.3s ease;
+        a {
+            text-decoration: none;
         }
 
-        .mb-4::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
+        .pic img {
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 0.3s ease;
-        }
-
-        .firstarticle:hover .mb-4::after {
-            opacity: 1;
+            vertical-align: auto;
+            transition: 1s;
+            display: flex;
+            opacity: 0.8;
         }
 
 
+        .swiper-container {
+            width: 90%;
+        }
 
-
-        .headerbar {
+        .search-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 0;
-            list-style: none;
-            background-color: black;
-            margin: 0;
-            bottom: 0;
-
+            width: 45%;
+            margin: auto;
+            padding: 20px 20px;
         }
 
-        .categoryletter {
-            font-size: 100px;
-            color: #b78d65;
-            position: relative;
-            left: 0;
-            bottom: 300px;
-            text-decoration: underline;
-            background-color: black;
-        }
-
-        .headerbar li {
+        input[type="text"] {
             flex: 1;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+        }
+
+        button {
+            background-color: #8c6843;
+            color: #fff;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            padding: 20px 50px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1000px) {
+
+            .searchbutton {
+                flex-direction: column;
+                /* Stack elements vertically for smaller screens */
+            }
+
+            .search-container {
+                margin: 10px auto;
+                width: 80%;
+            }
+
+            input[type="text"],
+            button {
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 10px;
+            padding: 40px;
+            background-image: url(img/2.jpg);
             text-align: center;
-            line-height: 0.6;
-
         }
 
-        .headerbar a {
-            color: #b78d65;
-            text-decoration: none;
-            font-size: 16x;
-            display: block;
-            padding: 24px 10px;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 500;
-
-        }
-
-        .frontpageblackblock {
-            height: 500px;
-            width: 100%;
+        .content .item {
+            width: 33%;
+            display: flex;
+            margin-bottom: 30px;
+            border: 5px solid white;
+            transition: 1s;
             position: relative;
-            background-color: black;
         }
 
-        .slideshow-container {
-            max-width: 100%;
+        .content .item .pic a {
+            color: white;
+            background-color: rgb(0, 0, 0, 0.5);
+            font-size: 30px;
+        }
+
+        .content .item .pic a:hover {
+            color: black;
+            background-color: rgb(255, 255, 255, 0.7);
+            font-style: bold;
+        }
+
+        .content .item:hover {
+            transform: translateY(-20px);
+            border: 5px solid wheat;
+        }
+
+        .content .item:hover img {
+            transform: scale(1.2);
+        }
+
+        .content .item:hover .movie {
+            background-color: #d1e3e8;
+        }
+
+
+        .item .pic {
+            width: 100%;
             position: relative;
             overflow: hidden;
-            height: 500px;
-
         }
 
-        .slide {
-            display: none;
-            position: absolute;
-            width: 100%;
-            height: 500px;
-
-        }
-
-        img {
-            object-fit: cover;
-        }
-
-        .phone {
+        .item .movie {
+            width: 30%;
+            background-color: #e11b22;
             display: flex;
-            gap: 10px;
-            padding: 10px;
-            align-items: center;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-        }
-
-        .phone a {
-            text-decoration: none;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 500;
-            color: #b78d65;
-            align-items: center;
-            padding: 10px;
-            display: flex;
-        }
-
-        .phone :hover {
-            color: white;
-            transition: 0.5s;
-            background-color: #b78d65;
-        }
-
-        .phone img {
-            width: 32px;
-            height: 32px;
-        }
-
-        .socialmediaiconk {
-            display: flex;
-            gap: 10px;
-            padding: 10px;
-            align-items: center;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-        }
-
-        .socialmediaiconk img {
-            width: 50px;
-            height: 50px;
-        }
-
-
-
-        .categoryletter {
-            font-size: 100px;
-            color: #b78d65;
-            position: absolute;
-            left: 0;
-            bottom: 10px;
-            text-decoration: underline;
-        }
-
-        .video {
-            width: 100%;
-            position: relative;
-        }
-
-        .video video {
-            width: 100%;
-        }
-
-        .video-text {
-            display: none;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #b78d65;
-            font-size: 30px;
-            padding: 10px;
-            width: 75%;
-            font-family: 'Open Sans', sans-serif;
+            align-items: center;
+            transition: 1s;
+            display: none;
         }
 
-        @keyframes fadeInOut {
-            0% {
-                opacity: 0;
-            }
-
-            25% {
-                opacity: 1;
-            }
-
-            75% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-            }
+        .item .movie:hover:after {
+            opacity: 1;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            list-style: none;
+
+        .movie li {
+            padding: 5px 10px;
         }
 
-        .categoryletter {
-            font-size: 100px;
-            color: #b78d65;
-            position: absolute;
-            left: 0;
-            bottom: 10px;
-            text-decoration: underline;
-        }
-
-        .frontpage .image {
-            width: 100px;
-            height: 100px;
-        }
-
-        .headerbar a:hover {
+        .movie a {
             color: white;
-            transition: 0.5s;
-            background-color: #b78d65;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-
-        footer h3 {
             font-size: 20px;
-            font-family: 'Open Sans', sans-serif;
-            margin: auto;
-        }
-
-        footer h2 {
-            color: gray;
-            margin: 10px;
-            padding: 10px;
-            font-size: 20px;
-            font-family: 'Open Sans', sans-serif;
-
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 100px;
-            letter-spacing: 1px;
-            padding: 15px;
-            height: 350px;
-        }
-
-        .footer-item {
-            padding: 10px;
+            font-weight: bold;
+            transition: 1s;
         }
 
 
-        h3 {
-            margin-bottom: 10px;
-        }
-
-        .smalltitle {
-            text-decoration: none;
-        }
-
-        .smalltitle :hover {
-            color: #b78d65;
-        }
-
-
-        .footer-grid,
-        .copyright {
-            color: white;
-        }
-
-        .article {
-            position: relative;
-            width: 100%
-        }
-
-
-        .innerarticle img {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .item .text {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 1s ease;
-        }
-
-        .mb-4 {
-            width: 300px;
-            height: 300px;
-            position: relative;
-            z-index: -2;
-
-        }
-
-
-
-        .article:hover img {
-            opacity: 1;
-        }
-
-
-        .firstarticle:hover .mb-4::after {
-            opacity: 1;
-        }
-
-        .article:hover .bg-img {
-            opacity: 1;
-        }
-
-        .firstarticle:hover .bg-img {
-            opacity: 1;
-        }
-
-        .mb-4:hover+.bg-img {
-            opacity: 1;
-        }
-
-        .innerarticletext {
-
+            position: absolute;
+            top: 0;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            color: #8c6843;
-            font-family: 'Open Sans', sans-serif;
-            letter-spacing: 3px;
+            align-items: center;
+            background-image: url(img/12.png);
+            background-size: cover;
+            transform: scale(0);
+            transition: 0.5s;
+        }
+
+        .item .pic:hover .text {
+            transform: scale(1);
+        }
+
+        .item .pic:hover {
+            opacity: 1;
         }
 
 
-        .article:hover .innerarticletext {
-            transform: scale(0.9);
-            color: transparent
+
+        .text li::before {
+            top: 0;
+            left: 0;
+        }
+
+        .text li::after {
+            bottom: 0;
+            right: 0;
+        }
+
+        .text li:hover:before,
+        .text li:hover::after {
+            width: 100%;
         }
 
 
-        .innerarticletext a.btn {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            background-color: #b78d65;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 500;
-            margin-top: 10px;
+        .text li::before,
+        .text li::after {
+            content: "";
+            width: 0;
+            height: 10px;
+            background-color: wheat;
+            position: absolute;
+            transition: 0.8s;
         }
 
-        .innerarticletext a.btn:hover {
-            background-color: #8c6843;
+        .text li a::before,
+        .text li a::after {
+            content: "";
+            width: 10px;
+            height: 0;
+            background-color: wheat;
+            position: absolute;
+            transition: 0.6s;
         }
+
+        .text li a::before {
+            bottom: 0;
+            left: 0;
+        }
+
+        .text li a::after {
+            top: 0;
+            right: 0;
+        }
+
+        .text li a:hover:before,
+        .text li a:hover::after {
+            height: 100%;
+        }
+
+        .text h3:hover:after {
+            width: 100%;
+        }
+
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 50px 10px 25px;
+            }
+
+            .content .item {
+                width: 95%;
+                margin: 0 auto 30px;
+            }
+
+            .content .item:nth-child(even) {
+                flex-direction: row-reverse;
+                right: 0;
+            }
+
+            .item .text {
+                padding: 0 10px 5px;
+            }
+
+            .text h2 {
+                font-size: 14px;
+                border: 2px solid white;
+            }
+
+            .text h3 {
+                font-size: 12px;
+                padding: 5px 0;
+            }
+
+            .text h3::after {
+                height: 2px;
+            }
+
+            .movie li~li {
+                display: none;
+            }
+
+            .movie a {
+                font-size: 16px;
+            }
+
+            .swiper-container {
+                width: 100%;
+            }
+
+            .footer {
+                background-color: black;
+                bottom: 0;
+            }
+
+            @media (max-width: 650px){
+            .categoryletter{
+                font-size: 75px;
+            }
+
+            }
+
+
+        }
+
+
 
         .scroll-to-top {
             position: fixed;
@@ -410,35 +352,38 @@
         .go-back:hover {
             background-color: #8c6843;
         }
+
+        .searchbutton {
+            display: flex;
+            background-color: black;
+        }
     </style>
 </head>
 
+
 <body>
 
-    <!-- <header>
+    <script>
+        $(document).ready(function () {
+            const hamburger = $('#hamburger');
+            const mobileMenu = $('.mheaderbar');
 
-        <div class="headerwheatbar">
-            <a href="#"><img src="img/logo2.png" alt=""></a>
+            hamburger.click(function () {
+                mobileMenu.toggleClass('mobile-menu-active');
+            });
 
-            <div class="phone">
-                <a href="#"><img src="img/phone.png" alt="">(03) 4258183</a>
-                <a href="#"><img src="img/email.png" alt="">tibame.gmail.com</a>
-                <a href="#"><img src="img/address.png" alt="">320桃園市中壢區復興路46號9樓</a>
-            </div>
-
-
-
-            <div class="socialmediaiconk">
-                <a href="#"><img src="img/facebook.png" alt=""></a>
-                <a href="#"><img src="img/twitter.png" alt=""></a>
-                <a href="#"><img src="img/ig.png" alt=""></a>
-                <a href="#"><img src="img/line.png" alt=""></a>
-                <a href="#"><img src="img/youtube.png" alt=""></a>
-            </div>
-        </div>
-    </header> -->
-
+            $('.mheaderbar a').click(function () {
+                mobileMenu.removeClass('mobile-menu-active');
+            });
+        });
+    </script>
     <nav>
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
         <ul class="headerbar">
             <li><a href="#"><img src="img/logo2.png" alt=""></a></li>
             <li><a href="index.html">關於我們 <br><br> ABOUT US</a></li>
@@ -448,162 +393,215 @@
             <li><a href="contactus.html">聯絡資訊 <br><br>CONTACT</a></li>
             <li><a href="member.html">會員中心 <br><br>MEMBERS</a></li>
         </ul>
+        <ul class="mheaderbar">
+            <a href="#"><img src="img/logo2.png" alt=""></a>
+            <li><a href="index.html">關於我們 <br><br><br> ABOUT US</a></li>
+            <li><a href="news.html">最新消息 <br><br><br>NEWS</a></li>
+            <li><a href="promoption.html">限時特惠 <br><br><br>PROMTION</a></li>
+            <li><a href="category.html">海鮮品項 <br><br><br>CATEGORY</a></li>
+            <li><a href="contactus.html">聯絡資訊 <br><br><br>CONTACT</a></li>
+            <li><a href="member.html">會員中心 <br><br><br>MEMBERS</a></li>
+        </ul>
     </nav>
 
-    <div class="frontpageblackblock">
-        <div class="slideshow-container">
-            <div class="slide fade">
-                <img src="img/1.jpg" alt="">
-            </div>
-            <div class="slide fade">
-                <img src="img/2.jpg" alt="">
-            </div>
-            <div class="slide fade">
-                <img src="img/12.png" alt="">
-            </div>
+    <div id="owl-demo" class="owl-carousel owl-theme frontpageblackblock">
+
+
+        <div class="item">
+            <img src="img/2.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="img/12.png">
+        </div>
+        <div class="item">
+            <img src="img/2.jpg">
+
+        </div>
+        <div class="item">
+            <img src="img/12.png">
+
+        </div>
+        <div class="item">
+            <img src="img/2.jpg">
+
+        </div>
+        <div class="item">
+            <img src="img/12.png">
+
         </div>
 
+
+    </div>
+
+    </div>
+
+    <div class="searchbutton">
         <div class="categoryletter">
             CATEGORY
         </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </div>
     </div>
+
+
 
     <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let slides = document.getElementsByClassName("slide");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000);
-        }
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            // autoplayHoverPause: true
+        });
+        $('.play').on('click', function () {
+            owl.trigger('play.owl.autoplay', [2000])
+        })
+        $('.stop').on('click', function () {
+            owl.trigger('stop.owl.autoplay')
+        })
     </script>
 
-    <div class="articlecontent">
+    <script>
+        $(document).ready(function () {
 
-        <div class="article">
-            <div class="innerarticle">
+            $("#owl-demo").owlCarousel({
+                navigation: true
+            });
 
-                <img class="bg-img" src="img/1.jpg">
-                <div class="innerarticletext">
+        });
+    </script>
 
-                    <img class="mb-4" src="img/2.jpg" alt="Icon">
-                    <h3 class="mb-3">秋刀魚</h3>
-                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
+
+    <div class="content">
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=11">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=12">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=13">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=14">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=15">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=16">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=17">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=18">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=19">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=20">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=21">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=10">
+                alt="">
+                <div class="text">
+                    <li><a href="#">午仔魚 milkfish</a></li>
+
                 </div>
             </div>
         </div>
 
-        <div class="article">
-            <div class="innerarticle">
 
-                <img class="bg-img" src="img/1.jpg">
-                <div class="innerarticletext">
-                    <img class="mb-4" src="img/2.jpg" alt="Icon">
-                    <h3 class="mb-3">虱目魚</h3>
-                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="article">
-            <div class="innerarticle">
-
-                <img class="bg-img" src="img/1.jpg">
-                <div class="innerarticletext">
-
-                    <img class="mb-4" src="img/2.jpg" alt="Icon">
-                    <h3 class="mb-3">黃魚</h3>
-                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="article">
-            <div class="innerarticle">
-
-                <img class="bg-img" src="img/1.jpg">
-                <div class="innerarticletext">
-
-                    <img class="mb-4" src="img/2.jpg" alt="Icon">
-                    <h3 class="mb-3">香魚</h3>
-                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="article">
-            <div class="innerarticle">
-                <img class="bg-img" src="img/1.jpg">
-                <div class="innerarticletext">
-                    <img class="mb-4" src="img/2.jpg" alt="Icon">
-                    <h3 class="mb-3">午仔魚</h3>
-                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="article">
-            <div class="innerarticle">
-
-                <img class="bg-img" src="img/1.jpg">
-                <div class="innerarticletext">
-
-                    <img class="mb-4" src="img/2.jpg" alt="Icon">
-                    <h3 class="mb-3">白鯧</h3>
-                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="article">
-            <div class="innerarticle">
-
-                <img class="bg-img" src="img/1.jpg">
-                <div class="innerarticletext">
-
-                    <img class="mb-4" src="img/2.jpg" alt="Icon">
-                    <h3 class="mb-3">土魠魚</h3>
-                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="article">
-            <div class="innerarticle">
-
-                <img class="bg-img" src="img/1.jpg">
-                <div class="innerarticletext">
-
-                    <img class="mb-4" src="img/2.jpg" alt="Icon">
-                    <h3 class="mb-3">鱸魚</h3>
-                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="article">
-            <div class="innerarticle">
-
-                <img class="bg-img" src="img/1.jpg">
-                <div class="innerarticletext">
-
-                    <img class="mb-4" src="img/2.jpg" alt="Icon">
-                    <h3 class="mb-3">台灣鯛</h3>
-                    <p class="mb-4">早年產量稀少，被視為珍貴魚類</p>
-                    <a class="btn" href=""><i class="readmore"></i>Read More</a>
-                </div>
-            </div>
-        </div>
     </div>
+
+
 
     <div id="scrollToTop" class="scroll-to-top">Top
     </div>
@@ -628,58 +626,60 @@
     </script>
 
     <footer>
+        <div class="wheatbar">
+            <a href="#"><img src="img/logo2.png" alt=""></a>
+        </div>
         <div class="footer-grid">
             <div class="footer-item">
                 <h3>新聞 NEWS</h3>
-                <br>
                 <a class="smalltitle" href="#">
-                    <h2>熱門新聞 Hot News</h2>
-                    <h2>最新活動 Activity</h2>
-                    <h2>最新動態 Posting</h2>
+                    <h2>熱門新聞 <br>Hot News</h2>
+                    <h2>最新活動 <br>Activity</h2>
+                    <h2>最新動態 <br>Posting</h2>
                 </a>
             </div>
             <div class="footer-item">
-                <h3>關於 About
-                </h3>
-                <br>
+                <h3>關於 About</h3>
                 <a class="smalltitle" href="#">
-                    <h2>關於我們 About Us</h2>
-                    <h2>免責聲明 Declaration</h2>
-                    <h2>服務條款 Serving Policy</h2>
-                    <h2>人才招募 Join Us</h2>
+                    <h2>關於我們 <br>About Us</h2>
+                    <h2>免責聲明 <br>Declaration</h2>
+                    <h2>服務條款 <br>Service</h2>
                 </a>
-
-
             </div>
             <div class="footer-item">
                 <h3>會員 Member</h3>
-                <br>
                 <a class="smalltitle" href="#">
-                    <h2>註冊 SignIn</h2>
-                    <h2>登入 LogIn</h2>
-                    <h2>帳戶資料 Account</h2>
-                    <h2>更多資訊 More Info</h2>
+                    <h2>註冊 <br>SignIn</h2>
+                    <h2>登入 <br>LogIn</h2>
+                    <h2>帳戶資料 <br>Account</h2>
                 </a>
-
             </div>
             <div class="footer-item">
                 <h3>法律條款 LAW</h3>
-                <br>
                 <a class="smalltitle" href="#">
-                    <h2>隱私政策 Private Policy</h2>
-                    <h2>瀏覽紀錄政策 Cookies Policy</h2>
-                    <h2>銷售條款 Sales Policy</h2>
-
+                    <h2>隱私政策 <br>Privacy</h2>
+                    <h2>瀏覽紀錄政策 <br>Cookies</h2>
+                    <h2>銷售條款 <br>Sales Policy</h2>
                 </a>
             </div>
         </div>
-
+        <div class="phone">
+            <a href="#"><img src="img/phone.png" alt="">(03) 4258183</a>
+            <a href="#"><img src="img/email.png" alt="">tibame.gmail.com</a>
+            <a href="#"><img src="img/address.png" alt="">320桃園市中壢區復興路46號9樓</a>
         </div>
+        <div class="socialmediaiconk">
+            <a href="#"><img src="img/facebook.png" alt=""></a>
+            <a href="#"><img src="img/twitter.png" alt=""></a>
+            <a href="#"><img src="img/ig.png" alt=""></a>
+            <a href="#"><img src="img/line.png" alt=""></a>
+            <a href="#"><img src="img/youtube.png" alt=""></a>
+        </div>
+        <div class="seperator"></div>
         <div class="copyright" style="font-size: 20px; font-family:'Open Sans', sans-serif;color: #b78d65 ;">
             © 2023 本網站為緯育TibaMe前端工程師班CHD103專題作品，本平台僅供學習、展示之用。
         </div>
     </footer>
-
 </body>
 
 </html>
