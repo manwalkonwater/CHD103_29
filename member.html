@@ -20,173 +20,112 @@
     <link rel="stylesheet" href="headerfooter.css">
 </head>
 <style>
-    h1 {
-        text-align: center;
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    label {
-        margin-bottom: 5px;
-    }
-
-    input {
-        padding: 8px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        width: 200px;
-    }
-
-    button {
-        padding: 8px 15px;
-        font-size: 20px;
-        background-color: #b78d65;
-        color: white;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-        display: flex;
-        border: 1px white solid;
-    }
-
-
-    button:hover {
-        background-color: black;
-        color: #b78d65;
-    }
-
-
-    #errorMessage {
-        color: white;
-        margin-top: 10px;
-    }
-
-    .elsebutton {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        position: relative;
-
-    }
-
-    .go-back {
-        position: fixed;
-        bottom: 50px;
-        right: 70px;
-        background-color: #b78d65;
-        color: white;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 9999;
-    }
-
-    .go-back:hover {
-        background-color: #8c6843;
-    }
-
-    .wrap .card {
-        background-color: #000000;
-        text-align: left;
-        display: flex;
-        margin: auto;
-
-    }
-
-    .wrap .card .txt {
-        position: flex;
-        display: inline-flex;
-        width: 50%;
-        color: #b78d65;
-        margin: auto;
-        padding: 20px;
-
-    }
-
-    .wrap .card .pic img {
+    .login {
         width: 100%;
-        vertical-align: middle;
-        border-radius: 70%;
-        margin-bottom: 30px;
-        margin-top: 30px;
+        height: 600px;
+        background-color: rgba(0, 0, 0, .5);
+        bordr-radius: 10px;
+        box-shadow: 0 0 60px #000;
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(/img/2.jpg);
+        background-size: cover;
     }
 
-    .wrap .mbcard {
-        display: none;
+    .form {
+        width: 400px;
+        color: #fff;
     }
 
-    .container {
-        background-color: red;
-        padding: 50px;
-        margin: 50px;
+    .form h2 {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #fff;
     }
 
-    @media screen and (max-width: 1200px) {
-        .wrap .card {
-            display: none;
+    .form .group {
+        margin-bottom: 20px;
+    }
+
+    .form label {
+        line-height: 2;
+    }
+
+    .form input {
+        width: 100%;
+        border: 1px solid #aaa;
+        line-height: 3;
+        border-radius: 5px;
+    }
+
+    .form .btn-group {
+        font-size: 0;
+    }
+
+    .form .btn {
+        font-size: 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #b78d65;
+        width: 190px;
+        padding: 10px 0;
+        color: #fff;
+        font-family: 'Open Sans', sans-serif;
+        cursor: pointer;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .form .btn+.btn {
+        margin-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .login {
+                height: auto;
+                background-size: contain;
+            }
+        .form{
+            width: 80%;
+            margin: 20px;
+            height: 300px;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+        }
+        .btn-group{
+            display: flex;
+            width: 80%;
+            margin: 20px;
+        }
+        
+        
+    }
+
+    @media (max-width: 650px) {
+        .categoryletter {
+            font-size: 75px;
+        }
+    }
+
+    @media (max-width: 414px) {
+        .login {
+            height: auto;
+            background-size: contain;
         }
 
-        .wrap .mbcard {
-            display: block;
-            border: white 0 0 2px 2px solid;
-        }
-
-        .wrap .mbcard .txt {
-            color: #b78d65;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .wrap .mbcard .pic img {
-            width: 100%;
-            vertical-align: middle;
-            border-radius: 70%;
-            margin-bottom: 30px;
-            margin-top: 30px;
-        }
 
     }
 </style>
-
-<script>
-    $(document).ready(function () {
-        $(window).scroll(function () {
-            $('#marquee-content').addClass('marquee-content')
-        })
-
-    })
-</script>
-
-</style>
-
 
 
 <body>
-    <script>
-        $(document).ready(function () {
-            const hamburger = $('#hamburger');
-            const mobileMenu = $('.mheaderbar');
 
-            hamburger.click(function () {
-                mobileMenu.toggleClass('mobile-menu-active');
-            });
 
-            $('.mheaderbar a').click(function () {
-                mobileMenu.removeClass('mobile-menu-active');
-            });
-        });
-    </script>
     <nav>
 
         <div class="hamburger" id="hamburger">
@@ -249,7 +188,7 @@
 
     </div>
     <div class="categoryletter">
-        ABOUT US
+        MEMBER
     </div>
 
     <script>
@@ -260,7 +199,6 @@
             margin: 10,
             autoplay: true,
             autoplayTimeout: 2000,
-            // autoplayHoverPause: true
         });
         $('.play').on('click', function () {
             owl.trigger('play.owl.autoplay', [2000])
@@ -280,47 +218,70 @@
         });
     </script>
 
-    <div class="container">
-        <h1>會員登錄</h1>
-        <form id="loginForm">
-            <label for="username">信箱：</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">密碼：</label>
-            <input type="password" id="password" name="password" required>
-            <div id="errorMessage"></div>
-            <button type="">登錄</button>
+    <div class="login">
+        <form action="" class="form" id="loginForm">
+            <h2>會員登入</h2>
+            <div class="group">
+                <label for="user_id">帳號</label>
+                <input type="text" name="" id="user_id">
+            </div>
+
+            <div class="group">
+                <label for="user_password">密碼</label>
+                <input type="password" name="" id="user_password">
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="btn">登入</button>
+                <button type="button" class="btn" onclick="resetForm()">取消</button>
+            </div>
+            <p id="errorMessage" class="error-message"></p>
         </form>
-        <div class="elsebutton">
-            <button type="submit">忘記密碼</button>
-            <button type="submit">註冊</button>
-        </div>
-        <div id="goBack" class="go-back">Pre</div>
-        <script>
-            document.getElementById('loginForm').addEventListener('submit', function (event) {
-                event.preventDefault();
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const loginForm = document.getElementById("loginForm");
+        const errorMessage = document.getElementById("errorMessage");
 
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const user_id = document.getElementById("user_id").value;
+            const user_password = document.getElementById("user_password").value;
 
-
-                if (username === 'chd103' && password === 'chd103') {
-                    alert('登錄成功！');
-                    window.location.replace("./shoppingcart.html")
-
-                } else {
-                    document.getElementById('errorMessage').textContent = '用戶名或密碼錯誤！';
-                }
-            });
-        </script>
-        </div>
-
-        <script>
-
-            function goBack() {
-                window.history.back();
+            if (user_id === "chd103" && user_password === "chd103") {
+                Swal.fire({
+                    icon: 'success',
+                    title: '登入成功！',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                window.location.replace("./shoppingcart.html");
+            } else {
+                errorMessage.textContent = "帳號或密碼錯誤！";
             }
-            document.getElementById('goBack').addEventListener('click', goBack);
-        </script>
+        });
+    });
+
+    function resetForm() {
+        document.getElementById("user_id").value = "";
+        document.getElementById("user_password").value = "";
+        document.getElementById("errorMessage").textContent = "";
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+    document.getElementById('goBack').addEventListener('click', goBack);
+</script>
+
+<div id="goBack" class="go-back">Pre</div>
+<script>
+
+    function goBack() {
+        window.history.back();
+    }
+    document.getElementById('goBack').addEventListener('click', goBack);
+</script>
 
 <footer>
     <div class="wheatbar">
